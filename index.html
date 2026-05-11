@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xtecq | High-Precision SEA AI Data Solutions</title>
-  <meta name="description" content="Xtecq delivers enterprise-grade AI data solutions — multilingual RLHF, computer vision annotation, and localized data collection across Southeast Asia. 99%+ accuracy guaranteed." />
+  <title>Xtecq | SEA AI Data Solutions — RLHF, Annotation & Evaluation</title>
+  <meta name="description" content="Xtecq provides multilingual AI data solutions for Southeast Asia — RLHF, AI evaluation, data annotation in English, Malay, Mandarin and Cantonese." />
 
   <!-- Open Graph -->
-  <meta property="og:title"       content="Xtecq | High-Precision SEA AI Data Solutions" />
-  <meta property="og:description" content="Southeast Asia's premier AI data partner. Multilingual RLHF, Computer Vision, Localized Data Collection. 99%+ accuracy." />
+  <meta property="og:title"       content="Xtecq | SEA AI Data Solutions" />
+  <meta property="og:description" content="Multilingual RLHF, AI evaluation and data annotation built for Southeast Asia." />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://xtecq.com" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Xtecq | SEA AI Data Solutions" />
-  <meta name="twitter:description" content="99%+ accuracy AI data annotation for Southeast Asian multilingual datasets." />
+  <meta name="twitter:description" content="Multilingual RLHF and AI data annotation for Southeast Asia." />
 
-  <!-- Schema Markup -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,7 +30,7 @@
       "addressLocality": "Kuala Lumpur",
       "addressCountry": "MY"
     },
-    "description": "Premier AI Data Solutions provider in Southeast Asia",
+    "description": "SEA multilingual AI data solutions — RLHF, annotation, AI evaluation",
     "parentOrganization": {
       "@type": "Organization",
       "name": "West Corporate Sdn Bhd"
@@ -48,10 +48,12 @@
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
             brand: {
+              red:    '#D93025',
+              redsoft:'#F05545',
               navy:   '#0B1F3A',
               indigo: '#3B4FC8',
               blue:   '#1A56DB',
-              light:  '#E8EEFF',
+              light:  '#FEF2F2',
               slate:  '#64748B',
               dark:   '#0F172A',
             }
@@ -62,320 +64,206 @@
   </script>
 
   <style>
-    /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #F8FAFC; color: #0F172A; overflow-x: hidden; }
 
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
+    /* ── Hero ── */
     .hero-bg {
-      background: linear-gradient(135deg, #050d1f 0%, #0B1F3A 35%, #0f2a5c 65%, #1a3a8f 100%);
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #050d1f 0%, #0B1F3A 40%, #1a1a2e 70%, #16213e 100%);
+      position: relative; overflow: hidden; min-height: 100vh;
     }
-    #particle-canvas {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; z-index: 0;
-    }
-    .glow-orb {
-      position: absolute; border-radius: 50%;
-      filter: blur(80px); pointer-events: none;
-      animation: orb-float 8s ease-in-out infinite;
-    }
-    .orb-1 { width:500px; height:500px; background:rgba(59,79,200,0.25);  top:-100px; right:-100px; animation-delay:0s; }
-    .orb-2 { width:350px; height:350px; background:rgba(29,78,216,0.2);   bottom:-50px; left:10%;  animation-delay:3s; }
-    .orb-3 { width:250px; height:250px; background:rgba(139,92,246,0.15); top:40%; left:40%;      animation-delay:5s; }
-    @keyframes orb-float {
-      0%,100% { transform: translateY(0px) scale(1); }
-      50%      { transform: translateY(-30px) scale(1.05); }
-    }
+    #particle-canvas { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
     .grid-dots {
       position: absolute; inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none; z-index: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 36px 36px; pointer-events:none; z-index:0;
     }
+    .glow-orb { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; animation: orb-float 10s ease-in-out infinite; }
+    .orb-1 { width:400px; height:400px; background:rgba(217,48,37,0.12); top:-80px; right:-80px; animation-delay:0s; }
+    .orb-2 { width:300px; height:300px; background:rgba(59,79,200,0.15); bottom:-40px; left:5%; animation-delay:4s; }
+    @keyframes orb-float { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-25px) scale(1.04);} }
 
-    /* ══════════════════════════════════════
-       TYPOGRAPHY
-    ══════════════════════════════════════ */
+    /* ── Typography ── */
     .gradient-text {
-      background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      background: linear-gradient(135deg, #F87171 0%, #FB923C 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .gradient-text-gold {
-      background: linear-gradient(135deg, #F59E0B, #EF4444);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    .gradient-text-blue {
+      background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
 
-    /* ══════════════════════════════════════
-       BUTTONS
-    ══════════════════════════════════════ */
+    /* ── Buttons ── */
     .btn-primary {
-      background: linear-gradient(135deg, #3B4FC8 0%, #1A56DB 100%);
-      box-shadow: 0 4px 24px rgba(59,79,200,0.45);
-      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #D93025 0%, #B71C1C 100%);
+      box-shadow: 0 4px 20px rgba(217,48,37,0.35);
+      transition: transform 0.2s, box-shadow 0.2s; position:relative; overflow:hidden;
     }
-    .btn-primary::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(59,79,200,0.55); }
-    .btn-primary:hover::after { opacity: 1; }
-
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(217,48,37,0.45); }
     .btn-ghost {
-      border: 1.5px solid rgba(255,255,255,0.25);
-      transition: all 0.2s; backdrop-filter: blur(4px);
+      border: 1.5px solid rgba(255,255,255,0.22);
+      transition: all 0.2s; backdrop-filter:blur(4px);
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08); }
+    .btn-ghost:hover { border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.07); }
 
-    /* ══════════════════════════════════════
-       CARDS
-    ══════════════════════════════════════ */
+    /* ── Cards ── */
     .service-card {
-      border: 1px solid #E2E8F0;
-      position: relative; overflow: hidden; /* BUG #8 FIX: moved from JS */
-      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-color 0.35s ease;
+      border: 1px solid #E2E8F0; position:relative; overflow:hidden;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .service-card::before {
-      content: ''; position: absolute; top:0; left:0; right:0; height:3px;
-      background: linear-gradient(90deg, #3B4FC8, #1A56DB, #06B6D4);
-      transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,#D93025,#F05545,#FB923C);
+      transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;
     }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(59,79,200,0.18); border-color: #C7D2FE; }
-    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(217,48,37,0.1); border-color:#FECACA; }
+    .service-card:hover::before { transform:scaleX(1); }
 
-    .glass-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(16px);
-    }
-    .metric-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(12px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .metric-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .glass-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(16px); }
 
-    /* ══════════════════════════════════════
-       SECTION PILL
-    ══════════════════════════════════════ */
+    /* ── Pills ── */
     .section-pill {
-      display: inline-block; padding: 6px 18px;
-      background: rgba(59,79,200,0.1); color: #3B4FC8;
-      border-radius: 50px; font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(59,79,200,0.22);
+      display:inline-block; padding:5px 16px;
+      background:rgba(217,48,37,0.08); color:#D93025;
+      border-radius:50px; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(217,48,37,0.18);
     }
     .section-pill-dark {
-      display: inline-block; padding: 6px 18px;
-      background: rgba(255,255,255,0.1); color: #93C5FD;
-      border-radius: 50px; font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.18);
+      display:inline-block; padding:5px 16px;
+      background:rgba(255,255,255,0.08); color:#FCA5A5;
+      border-radius:50px; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.15);
     }
 
-    /* ══════════════════════════════════════
-       LOGO BAR
-    ══════════════════════════════════════ */
-    .logo-track {
-      display: flex; gap: 64px; align-items: center;
-      animation: scroll-left 25s linear infinite; white-space: nowrap;
-    }
-    .logo-track:hover { animation-play-state: paused; }
-    @keyframes scroll-left {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ══════════════════════════════════════
-       COMPARISON TABLE
-    ══════════════════════════════════════ */
-    .compare-row:nth-child(odd)  { background: #F8FAFC; }
-    .compare-row:nth-child(even) { background: #ffffff; }
-    .compare-row:hover           { background: #EEF2FF; transition: background 0.2s; }
-
-    /* ══════════════════════════════════════
-       FAQ ACCORDION
-    ══════════════════════════════════════ */
-    .faq-answer {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-    }
-    .faq-answer.open { max-height: 300px; }
-    .faq-icon { transition: transform 0.3s ease; }
-    .faq-icon.open { transform: rotate(45deg); }
-
-    /* ══════════════════════════════════════
-       LANGUAGE BADGE
-    ══════════════════════════════════════ */
+    /* ── Lang Badge ── */
     .lang-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 20px; border-radius: 50px;
-      background: linear-gradient(135deg, rgba(59,79,200,0.08), rgba(26,86,219,0.08));
-      border: 1px solid rgba(59,79,200,0.2);
-      font-weight: 600; color: #1e3a8a;
-      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); cursor: default;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 18px; border-radius:50px;
+      background:rgba(217,48,37,0.06); border:1px solid rgba(217,48,37,0.18);
+      font-weight:600; color:#7f1d1d;
+      transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1); cursor:default;
     }
     .lang-badge:hover {
-      background: linear-gradient(135deg,#3B4FC8,#1A56DB);
-      color: #fff; border-color: transparent;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,79,200,0.3);
+      background:linear-gradient(135deg,#D93025,#B71C1C);
+      color:#fff; border-color:transparent; transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(217,48,37,0.3);
     }
 
-    /* ══════════════════════════════════════
-       TESTIMONIALS
-    ══════════════════════════════════════ */
-    .testimonial-card {
-      border: 1px solid #E2E8F0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(59,79,200,0.12); }
+    /* ── Process Step ── */
+    .process-step { transition:transform 0.3s ease; }
+    .process-step:hover { transform:translateY(-4px); }
 
-    /* ══════════════════════════════════════
-       PROCESS STEP
-    ══════════════════════════════════════ */
-    .process-step { transition: transform 0.3s ease; }
-    .process-step:hover { transform: translateY(-4px); }
+    /* ── FAQ ── */
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+    .faq-answer.open { max-height:300px; }
+    .faq-icon { transition:transform 0.3s ease; }
+    .faq-icon.open { transform:rotate(45deg); }
 
-    /* ══════════════════════════════════════
-       WHATSAPP WIDGET — BUG #10 FIX: z-index:200
-    ══════════════════════════════════════ */
-    #wa-widget { position: fixed; bottom: 28px; left: 28px; z-index: 200; }
+    /* ── WhatsApp ── */
+    #wa-widget { position:fixed; bottom:28px; left:28px; z-index:200; }
     #wa-bubble {
-      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
-      animation: wa-pulse 3s ease-in-out infinite;
+      width:54px; height:54px; background:#25D366; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; cursor:pointer;
+      box-shadow:0 4px 18px rgba(37,211,102,0.4);
+      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+      animation:wa-pulse 3.5s ease-in-out infinite;
     }
-    #wa-bubble:hover { transform: scale(1.12); box-shadow: 0 8px 32px rgba(37,211,102,0.55); }
-    @keyframes wa-pulse {
-      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-      50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.1); }
-    }
+    #wa-bubble:hover { transform:scale(1.1); box-shadow:0 8px 28px rgba(37,211,102,0.5); }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.4);} 50%{box-shadow:0 4px 28px rgba(37,211,102,0.65), 0 0 0 7px rgba(37,211,102,0.08);} }
     #wa-panel {
-      position: absolute; bottom: 68px; left: 0; width: 300px;
-      background: white; border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.18); overflow: hidden;
-      transform: scale(0.85) translateY(16px); transform-origin: bottom left;
-      opacity: 0; pointer-events: none;
-      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      position:absolute; bottom:66px; left:0; width:290px;
+      background:#fff; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.16); overflow:hidden;
+      transform:scale(0.85) translateY(14px); transform-origin:bottom left;
+      opacity:0; pointer-events:none; transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
     }
-    #wa-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; }
+    #wa-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:auto; }
 
-    /* ══════════════════════════════════════
-       SCROLL REVEAL
-    ══════════════════════════════════════ */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ── Scroll reveal ── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* ══════════════════════════════════════
-       NAV
-    ══════════════════════════════════════ */
-    #navbar { transition: all 0.3s ease; }
-    .nav-scrolled { box-shadow: 0 2px 32px rgba(11,31,58,0.1); }
+    /* ── Nav ── */
+    #navbar { transition:all 0.3s ease; }
+    .nav-scrolled { box-shadow:0 2px 28px rgba(11,31,58,0.1); }
 
-    /* ══════════════════════════════════════
-       MOBILE MENU — BUG #7 FIX: 600px
-    ══════════════════════════════════════ */
-    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
-    #mobile-menu.open { max-height: 600px; }
+    /* ── Mobile menu ── */
+    #mobile-menu { max-height:0; overflow:hidden; transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+    #mobile-menu.open { max-height:600px; }
 
-    /* ══════════════════════════════════════
-       SCROLL-TO-TOP
-    ══════════════════════════════════════ */
+    /* ── Scroll top ── */
     #scroll-top {
-      position: fixed; bottom: 28px; right: 28px; z-index: 200;
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg,#3B4FC8,#1A56DB);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(59,79,200,0.4);
-      opacity: 0; pointer-events: none; transition: all 0.3s ease; border: none;
+      position:fixed; bottom:28px; right:28px; z-index:200;
+      width:46px; height:46px; background:linear-gradient(135deg,#D93025,#B71C1C);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; box-shadow:0 4px 18px rgba(217,48,37,0.35);
+      opacity:0; pointer-events:none; transition:all 0.3s ease; border:none;
     }
-    #scroll-top.visible { opacity: 1; pointer-events: auto; }
-    #scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(59,79,200,0.5); }
+    #scroll-top.visible { opacity:1; pointer-events:auto; }
+    #scroll-top:hover { transform:translateY(-3px); }
 
-    /* ══════════════════════════════════════
-       FORM
-    ══════════════════════════════════════ */
+    /* ── Form ── */
     .form-input {
-      width: 100%; padding: 12px 16px;
-      border: 1.5px solid #E2E8F0; border-radius: 10px;
-      font-size: 0.9rem; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: white; font-family: 'Inter', sans-serif; color: #0F172A;
+      width:100%; padding:11px 15px; border:1.5px solid #E2E8F0; border-radius:10px;
+      font-size:0.875rem; outline:none; transition:border-color 0.2s, box-shadow 0.2s;
+      background:#fff; font-family:'Inter',sans-serif; color:#0F172A;
     }
-    .form-input:focus { border-color: #3B4FC8; box-shadow: 0 0 0 4px rgba(59,79,200,0.1); }
+    .form-input:focus { border-color:#D93025; box-shadow:0 0 0 4px rgba(217,48,37,0.08); }
     .form-select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;
+      appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 12px center; background-size:15px;
     }
 
-    /* ══════════════════════════════════════
-       PROGRESS BARS
-    ══════════════════════════════════════ */
-    .progress-bar { width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+    /* ── Progress bars ── */
+    .progress-bar { width:0; transition:width 1.2s cubic-bezier(0.4,0,0.2,1); }
 
-    /* ══════════════════════════════════════
-       SCROLLBAR
-    ══════════════════════════════════════ */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: #F1F5F9; }
-    ::-webkit-scrollbar-thumb { background: #3B4FC8; border-radius: 3px; }
+    /* ── Compare table ── */
+    .compare-row:nth-child(odd)  { background:#F8FAFC; }
+    .compare-row:nth-child(even) { background:#fff; }
+    .compare-row:hover           { background:#FEF2F2; transition:background 0.2s; }
 
-    /* ══════════════════════════════════════
-       STAR RATING HELPER
-    ══════════════════════════════════════ */
-    .stars { display: flex; gap: 2px; }
-    .stars svg { width: 16px; height: 16px; color: #F59E0B; fill: #F59E0B; }
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:#F1F5F9; }
+    ::-webkit-scrollbar-thumb { background:#D93025; border-radius:3px; }
   </style>
 </head>
 <body class="antialiased">
 
-<!-- ████████████████████████████████████████
-     STICKY NAVIGATION
-█████████████████████████████████████████ -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md">
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-md">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
 
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center"
-             style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
-          <span class="text-white font-black text-lg leading-none">X</span>
-        </div>
+      <!-- ✅ REAL LOGO: Inline SVG of the red X mark -->
+      <a href="#" class="flex items-center gap-3" aria-label="Xtecq Home">
+        <svg width="36" height="36" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M155 30 C155 30, 130 55, 100 100 C70 55, 45 30, 45 30 C30 15, 10 35, 25 55 L70 110 L25 165 C10 185, 30 205, 45 190 L100 140 L155 190 C170 205, 190 185, 175 165 L130 110 L175 55 C190 35, 170 15, 155 30 Z" fill="#D93025"/>
+          <circle cx="158" cy="42" r="16" fill="#D93025"/>
+          <circle cx="158" cy="42" r="8" fill="white"/>
+        </svg>
         <div class="flex flex-col leading-none">
-          <span class="text-xl font-black tracking-tight text-brand-navy">Xtecq<span class="text-brand-indigo">.</span></span>
+          <span class="text-xl font-black tracking-tight text-brand-navy">Xtecq<span class="text-brand-red">.</span></span>
           <span class="text-[9px] font-semibold text-slate-400 tracking-widest uppercase">AI Data Solutions</span>
         </div>
       </a>
 
-      <!-- Desktop Nav — BUG #2 FIX: font-medium instead of font-500 -->
+      <!-- Desktop nav -->
       <div class="hidden lg:flex items-center gap-1">
-        <a href="#services"  class="nav-link px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-indigo hover:bg-brand-light rounded-lg transition-all">Services</a>
-        <a href="#process"   class="nav-link px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-indigo hover:bg-brand-light rounded-lg transition-all">Process</a>
-        <a href="#advantage" class="nav-link px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-indigo hover:bg-brand-light rounded-lg transition-all">SEA Advantage</a>
-        <a href="#compare"   class="nav-link px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-indigo hover:bg-brand-light rounded-lg transition-all">Why Xtecq</a>
-        <a href="#faq"       class="nav-link px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-indigo hover:bg-brand-light rounded-lg transition-all">FAQ</a>
+        <a href="#services"  class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-red hover:bg-brand-light rounded-lg transition-all">Services</a>
+        <a href="#process"   class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-red hover:bg-brand-light rounded-lg transition-all">Process</a>
+        <a href="#advantage" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-red hover:bg-brand-light rounded-lg transition-all">SEA Focus</a>
+        <a href="#compare"   class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-red hover:bg-brand-light rounded-lg transition-all">Why Us</a>
+        <a href="#faq"       class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-brand-red hover:bg-brand-light rounded-lg transition-all">FAQ</a>
       </div>
 
       <div class="flex items-center gap-3">
         <a href="#contact"
            class="hidden lg:inline-flex items-center gap-2 btn-primary text-white text-sm font-bold px-5 py-2.5 rounded-xl">
-          Get Started
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
+          Start a Pilot
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <button id="hamburger" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition" aria-label="Toggle menu">
           <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -384,175 +272,135 @@
       </div>
     </div>
 
-    <!-- Mobile Menu — BUG #7 FIX applied via CSS -->
+    <!-- Mobile menu -->
     <div id="mobile-menu">
       <div class="flex flex-col gap-1 border-t border-slate-100 py-4">
-        <a href="#services"  class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-xl transition">Services</a>
-        <a href="#process"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-xl transition">Process</a>
-        <a href="#advantage" class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-xl transition">SEA Advantage</a>
-        <a href="#compare"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-xl transition">Why Xtecq</a>
-        <a href="#faq"       class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-xl transition">FAQ</a>
-        <a href="#contact"   class="mx-4 mt-2 text-center btn-primary text-white text-sm font-bold px-5 py-3 rounded-xl">Get Started →</a>
+        <a href="#services"  class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-red rounded-xl transition">Services</a>
+        <a href="#process"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-red rounded-xl transition">Process</a>
+        <a href="#advantage" class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-red rounded-xl transition">SEA Focus</a>
+        <a href="#compare"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-red rounded-xl transition">Why Us</a>
+        <a href="#faq"       class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-red rounded-xl transition">FAQ</a>
+        <a href="#contact"   class="mx-4 mt-2 text-center btn-primary text-white text-sm font-bold px-5 py-3 rounded-xl">Start a Pilot →</a>
       </div>
     </div>
   </nav>
 </header>
 
 
-<!-- ████████████████████████████████████████
-     HERO SECTION
-█████████████████████████████████████████ -->
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
 <section class="hero-bg flex items-center pt-20">
   <canvas id="particle-canvas"></canvas>
   <div class="grid-dots"></div>
   <div class="glow-orb orb-1"></div>
   <div class="glow-orb orb-2"></div>
-  <div class="glow-orb orb-3"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 w-full">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Left: Copy -->
+      <!-- Left -->
       <div class="text-white">
         <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
-             style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
-          <span class="text-xs font-bold tracking-widest uppercase text-blue-200">Southeast Asia's #1 AI Data Partner</span>
+             style="background:rgba(217,48,37,0.12);border:1px solid rgba(217,48,37,0.25);">
+          <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse flex-shrink-0"></span>
+          <span class="text-xs font-bold tracking-widest uppercase text-red-300">Southeast Asia AI Data Partner</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
-          Your AI Doesn't<br/>
-          Understand<br/>
-          <span class="gradient-text">Southeast Asia.</span><br/>
-          <span class="text-white">Xtecq Fixes That.</span>
+          AI Data Built for<br/>
+          <span class="gradient-text">Southeast Asia's</span><br/>
+          Languages &amp; Culture
         </h1>
 
-        <p class="text-lg text-blue-100/80 leading-relaxed mb-10 max-w-lg">
-          We train AI models on data that truly reflects how
-          <strong class="text-white font-semibold">680 million SEA people</strong>
-          speak, think, and behave — across English, Malay, Mandarin &amp; Cantonese.
-          <span class="text-emerald-400 font-semibold">99%+ accuracy. Guaranteed.</span>
+        <p class="text-lg text-blue-100/75 leading-relaxed mb-10 max-w-lg">
+          Xtecq provides <strong class="text-white">RLHF, AI evaluation, and multilingual annotation</strong>
+          in English, Bahasa Melayu, Mandarin, and Cantonese —
+          delivered with the cultural and linguistic depth that generic vendors can't match.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 mb-12">
           <a href="#contact"
              class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-base">
-            Start Your Project
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
+            Request a Free Pilot
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
           <a href="#services"
              class="btn-ghost inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base text-white">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            See How It Works
+            See Our Services
           </a>
         </div>
 
-        <!-- Mini trust row -->
-        <div class="flex flex-wrap items-center gap-6 pt-8" style="border-top:1px solid rgba(255,255,255,0.1);">
+        <!-- Honest trust signals — no fake numbers -->
+        <div class="flex flex-wrap gap-6 pt-8" style="border-top:1px solid rgba(255,255,255,0.1);">
           <div class="flex items-center gap-2">
-            <div class="flex -space-x-2">
-              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 border-2 border-white/20 flex items-center justify-center text-xs font-bold text-white">A</div>
-              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 border-2 border-white/20 flex items-center justify-center text-xs font-bold text-white">R</div>
-              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-600 border-2 border-white/20 flex items-center justify-center text-xs font-bold text-white">M</div>
-              <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold text-white" style="background:rgba(255,255,255,0.1);">50+</div>
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(217,48,37,0.2);">
+              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </div>
-            <span class="text-blue-200 text-sm">Vetted Annotators</span>
+            <span class="text-blue-200 text-sm font-medium">Native SEA Annotators</span>
           </div>
-          <div class="flex items-center gap-1.5">
-            <div class="stars">
-              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-              <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(217,48,37,0.2);">
+              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </div>
-            <span class="text-blue-200 text-sm">5.0 Client Rating</span>
+            <span class="text-blue-200 text-sm font-medium">3-Tier QA Process</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(217,48,37,0.2);">
+              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-blue-200 text-sm font-medium">Pilot Before You Commit</span>
           </div>
         </div>
       </div>
 
-      <!-- Right: Live Dashboard Mockup -->
+      <!-- Right: Honest dashboard — no inflated numbers -->
       <div class="hidden lg:block">
         <div class="glass-card rounded-2xl overflow-hidden">
-          <div class="px-6 py-4 flex items-center justify-between" style="background:rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.08);">
+          <div class="px-6 py-4 flex items-center justify-between"
+               style="background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07);">
             <div class="flex items-center gap-3">
               <div class="flex gap-1.5">
-                <div class="w-3 h-3 rounded-full bg-red-400/70"></div>
-                <div class="w-3 h-3 rounded-full bg-amber-400/70"></div>
-                <div class="w-3 h-3 rounded-full bg-emerald-400/70"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400/60"></div>
               </div>
-              <span class="text-white/50 text-xs font-mono">xtecq-qa-dashboard.live</span>
+              <span class="text-white/40 text-xs font-mono">xtecq · project scope</span>
             </div>
-            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full" style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.25);">
-              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-              <span class="text-emerald-400 text-xs font-semibold">LIVE</span>
-            </div>
+            <span class="text-white/30 text-xs">KL, Malaysia</span>
           </div>
           <div class="p-6">
-            <div class="mb-6">
-              <p class="text-white/40 text-xs uppercase tracking-widest font-semibold mb-1">Real-Time QA Monitor</p>
-              <p class="text-white text-lg font-bold">Overall Project Accuracy</p>
-            </div>
-            <div class="text-center py-6 mb-6 rounded-xl" style="background:rgba(255,255,255,0.04);">
-              <div class="text-6xl font-black text-white mb-1">99<span class="text-emerald-400">.</span>4<span class="text-white/40 text-3xl">%</span></div>
-              <div class="text-emerald-400 text-sm font-semibold">↑ 0.2% from last batch</div>
-            </div>
-            <div class="space-y-4 mb-6">
-              <div>
-                <div class="flex justify-between mb-1.5">
-                  <span class="text-white/70 text-sm flex items-center gap-2"><span>🇬🇧</span> English (SEA)</span>
-                  <span class="text-white font-bold text-sm">99.7%</span>
-                </div>
-                <div class="h-2 rounded-full" style="background:rgba(255,255,255,0.08);">
-                  <div class="h-2 rounded-full" style="width:99.7%;background:linear-gradient(90deg,#3B82F6,#60A5FA);"></div>
+            <p class="text-white/40 text-xs uppercase tracking-widest font-semibold mb-5">What We Handle</p>
+
+            <!-- Service tags -->
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(217,48,37,0.1);border:1px solid rgba(217,48,37,0.2);">
+                <span class="text-red-400 text-lg">🧠</span>
+                <div>
+                  <p class="text-white font-semibold text-sm">RLHF &amp; Preference Ranking</p>
+                  <p class="text-white/40 text-xs">EN · BM · Mandarin · Cantonese</p>
                 </div>
               </div>
-              <div>
-                <div class="flex justify-between mb-1.5">
-                  <span class="text-white/70 text-sm flex items-center gap-2"><span>🇲🇾</span> Bahasa Melayu</span>
-                  <span class="text-white font-bold text-sm">99.2%</span>
-                </div>
-                <div class="h-2 rounded-full" style="background:rgba(255,255,255,0.08);">
-                  <div class="h-2 rounded-full" style="width:99.2%;background:linear-gradient(90deg,#8B5CF6,#A78BFA);"></div>
+              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(59,79,200,0.1);border:1px solid rgba(59,79,200,0.2);">
+                <span class="text-blue-400 text-lg">🔍</span>
+                <div>
+                  <p class="text-white font-semibold text-sm">AI Output Evaluation</p>
+                  <p class="text-white/40 text-xs">Accuracy · Tone · Cultural fit</p>
                 </div>
               </div>
-              <div>
-                <div class="flex justify-between mb-1.5">
-                  <span class="text-white/70 text-sm flex items-center gap-2"><span>🇨🇳</span> Mandarin</span>
-                  <span class="text-white font-bold text-sm">99.1%</span>
-                </div>
-                <div class="h-2 rounded-full" style="background:rgba(255,255,255,0.08);">
-                  <div class="h-2 rounded-full" style="width:99.1%;background:linear-gradient(90deg,#06B6D4,#67E8F9);"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1.5">
-                  <span class="text-white/70 text-sm flex items-center gap-2"><span>🗣️</span> Cantonese</span>
-                  <span class="text-white font-bold text-sm">99.0%</span>
-                </div>
-                <div class="h-2 rounded-full" style="background:rgba(255,255,255,0.08);">
-                  <div class="h-2 rounded-full" style="width:99%;background:linear-gradient(90deg,#F59E0B,#FCD34D);"></div>
+              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);">
+                <span class="text-emerald-400 text-lg">🏷️</span>
+                <div>
+                  <p class="text-white font-semibold text-sm">Data Annotation &amp; Collection</p>
+                  <p class="text-white/40 text-xs">Text · Audio · Image · Video</p>
                 </div>
               </div>
             </div>
-            <div class="grid grid-cols-3 gap-3">
-              <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.06);">
-                <div class="text-white font-black text-xl">3</div>
-                <div class="text-white/40 text-xs mt-0.5">QA Tiers</div>
-              </div>
-              <div class="rounded-xl p-3 text-center" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);">
-                <div class="text-emerald-400 font-black text-xl">✓</div>
-                <div class="text-white/40 text-xs mt-0.5">Certified</div>
-              </div>
-              <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.06);">
-                <div class="text-white font-black text-xl">24h</div>
-                <div class="text-white/40 text-xs mt-0.5">Turnaround</div>
-              </div>
+
+            <!-- Pilot offer -->
+            <div class="rounded-xl p-4 text-center" style="background:rgba(217,48,37,0.1);border:1px solid rgba(217,48,37,0.2);">
+              <p class="text-red-300 font-bold text-sm mb-1">🚀 Free Pilot Available</p>
+              <p class="text-white/50 text-xs">Start small. Verify quality. Scale when ready.</p>
             </div>
           </div>
         </div>
@@ -562,328 +410,242 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
-     TRUSTED BY (LOGO BAR)
-█████████████████████████████████████████ -->
-<section class="py-12 bg-white border-b border-slate-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">
-      Trusted by AI Teams at Leading Organizations
-    </p>
-    <div class="overflow-hidden" style="mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);">
-      <div class="logo-track">
-        <div class="flex gap-16 items-center flex-shrink-0">
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-xs font-black">A</div>Appen Partner
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white text-xs font-black">O</div>OneForma Ready
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-black">S</div>Scale AI Compliant
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-black">L</div>LLM Labs
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-700 flex items-center justify-center text-white text-xs font-black">M</div>MaLayAI
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-black">D</div>DataBridge SEA
-          </div>
-        </div>
-        <!-- Duplicate for seamless loop -->
-        <div class="flex gap-16 items-center flex-shrink-0" aria-hidden="true">
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-xs font-black">A</div>Appen Partner
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center text-white text-xs font-black">O</div>OneForma Ready
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-black">S</div>Scale AI Compliant
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-black">L</div>LLM Labs
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-700 flex items-center justify-center text-white text-xs font-black">M</div>MaLayAI
-          </div>
-          <div class="flex items-center gap-2 text-slate-400 font-bold text-lg whitespace-nowrap">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-black">D</div>DataBridge SEA
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ████████████████████████████████████████
-     PROBLEM STATEMENT
-█████████████████████████████████████████ -->
-<section class="py-20 lg:py-28" style="background:#F1F5F9;">
+<!-- ══════════════════════════════════════
+     WHY SEA IS DIFFERENT (Problem)
+══════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center reveal">
-      <span class="section-pill">The Problem</span>
+      <span class="section-pill">The Challenge</span>
       <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mt-4 mb-6">
-        Generic AI Data Vendors Are<br/>
-        <span class="gradient-text-gold">Failing Southeast Asia</span>
+        Southeast Asia Is Linguistically<br/>
+        <span class="gradient-text">Unlike Anywhere Else</span>
       </h2>
       <p class="text-lg text-slate-500 leading-relaxed mb-12">
-        Most annotation vendors treat Malay as "just another language" — missing code-switching,
-        regional slang, cultural taboos, and dialect nuances that make SEA one of the world's most
-        complex linguistic markets.
-        <strong class="text-slate-700">The result? Biased models. Poor performance. Frustrated users.</strong>
+        With 680+ million people across dozens of languages and dialects,
+        SEA requires annotation teams who genuinely understand the region —
+        not vendors who treat Malay as a translation exercise.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 reveal">
       <div class="bg-white rounded-2xl p-6 border border-red-100 shadow-sm text-center">
         <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-          </svg>
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
         </div>
-        <h3 class="font-bold text-slate-800 mb-2">Cultural Blindspots</h3>
-        <p class="text-slate-500 text-sm">Generic vendors miss the cultural context behind SEA idioms, humor, and religious sensitivities.</p>
+        <h3 class="font-bold text-slate-800 mb-2">Cultural Nuance</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Religious sensitivities, local humor, and contextual idioms are invisible to generic annotation tools and offshore teams.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 border border-amber-100 shadow-sm text-center">
         <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
-          </svg>
+          <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
         </div>
-        <h3 class="font-bold text-slate-800 mb-2">Poor Dialect Coverage</h3>
-        <p class="text-slate-500 text-sm">Manglish, Hokkien-influenced Mandarin, and Malaysian Cantonese require native expertise — not translation tools.</p>
+        <h3 class="font-bold text-slate-800 mb-2">Code-Switching Reality</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Malaysians naturally mix Malay, English, Mandarin, and Cantonese mid-sentence. This requires annotators who live it — not just study it.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 border border-orange-100 shadow-sm text-center">
         <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-          </svg>
+          <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
         </div>
-        <h3 class="font-bold text-slate-800 mb-2">Low Quality Floors</h3>
-        <p class="text-slate-500 text-sm">Without rigorous QA pipelines, accuracy rates drop to 85–90% — unacceptable for production AI models.</p>
+        <h3 class="font-bold text-slate-800 mb-2">Dialect Depth</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Malaysian Mandarin and Cantonese carry distinct regional character. Standard Chinese annotation misses this entirely.</p>
       </div>
     </div>
-    <div class="text-center mt-10 reveal">
-      <p class="text-brand-indigo font-bold text-lg">Xtecq was built specifically to solve all three. →</p>
-    </div>
+    <p class="text-center mt-10 font-bold text-brand-red text-lg reveal">Xtecq is built in Malaysia, for the SEA market. →</p>
   </div>
 </section>
 
 
-<!-- ████████████████████████████████████████
-     SERVICES SECTION
-█████████████████████████████████████████ -->
-<section id="services" class="py-24 lg:py-32 bg-white">
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section id="services" class="py-24 lg:py-32" style="background:#F8FAFC;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
-      <span class="section-pill">What We Do</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">Enterprise AI Data Services</h2>
-      <p class="text-lg text-slate-500 max-w-2xl mx-auto">Three core service lines, all engineered for the unique demands of the Southeast Asian AI market.</p>
+      <span class="section-pill">Our Services</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">What Xtecq Delivers</h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">Focused on the data work that makes AI systems better — across the languages that matter in Southeast Asia.</p>
     </div>
+
     <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Card 1 -->
+      <!-- RLHF -->
       <div class="service-card bg-white rounded-2xl p-8 reveal">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
-          <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-          </svg>
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#FEF2F2,#FECACA);">
+          <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
-        <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">LLM Training</span>
+        <span class="inline-block px-3 py-1 bg-red-50 text-red-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">RLHF</span>
         <h3 class="text-xl font-bold text-brand-navy mb-3">Multilingual RLHF &amp; LLM Tuning</h3>
-        <p class="text-slate-500 leading-relaxed mb-6 text-sm">Human feedback data generation for RLHF, preference ranking, instruction tuning, and red-teaming — delivered by native SEA speakers across all 4 languages.</p>
+        <p class="text-slate-500 leading-relaxed mb-6 text-sm">Human preference data for reinforcement learning — ranking AI responses, rating output quality, and flagging culturally inappropriate content across SEA languages.</p>
         <ul class="space-y-2.5 mb-8">
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Preference Ranking &amp; Scoring</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Instruction Following Datasets</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural Nuance Validation</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Harmful Content Red-Teaming</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Response preference ranking</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Instruction following datasets</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Harmful content red-teaming</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural sensitivity validation</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-1.5 text-indigo-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 text-red-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
 
-      <!-- Card 2 (featured) -->
-      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.1s;">
+      <!-- AI Evaluation -->
+      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.1s; position:relative;">
         <div class="absolute top-0 right-6 -translate-y-1/2">
-          <span class="inline-block px-4 py-1.5 text-xs font-bold text-white rounded-full" style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);box-shadow:0 4px 12px rgba(59,79,200,0.4);">★ Most Popular</span>
+          <span class="inline-block px-4 py-1.5 text-xs font-bold text-white rounded-full" style="background:linear-gradient(135deg,#D93025,#B71C1C);box-shadow:0 4px 10px rgba(217,48,37,0.35);">Core Offering</span>
         </div>
         <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
-          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-          </svg>
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
         </div>
-        <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">Vision AI</span>
-        <h3 class="text-xl font-bold text-brand-navy mb-3">High-Precision Computer Vision</h3>
-        <p class="text-slate-500 leading-relaxed mb-6 text-sm">Pixel-accurate image and video annotation — bounding boxes, segmentation, keypoints, and LiDAR labeling optimized for SEA environments and demographics.</p>
+        <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">AI Evaluation</span>
+        <h3 class="text-xl font-bold text-brand-navy mb-3">AI Output Evaluation</h3>
+        <p class="text-slate-500 leading-relaxed mb-6 text-sm">Human evaluation of AI-generated content for accuracy, tone, helpfulness, and cultural appropriateness — in the languages your users actually speak.</p>
         <ul class="space-y-2.5 mb-8">
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Bounding Box &amp; Segmentation</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>OCR &amp; Multilingual Document Parsing</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Video Frame Annotation</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>3D LiDAR Point Cloud Labeling</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Fluency &amp; coherence scoring</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Factual accuracy review</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural appropriateness checks</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Bias &amp; safety flagging</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-1.5 text-blue-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 text-blue-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
 
-      <!-- Card 3 -->
-      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.2s;">
+      <!-- Data Collection -->
+      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.2s; position:relative;">
         <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
-          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-          </svg>
+          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
         </div>
-        <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">Data Collection</span>
-        <h3 class="text-xl font-bold text-brand-navy mb-3">Localized Data Collection</h3>
-        <p class="text-slate-500 leading-relaxed mb-6 text-sm">End-to-end data acquisition — from regional accent speech recordings and curated text corpora to behavioral datasets from across Malaysia and SEA.</p>
+        <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">Data Work</span>
+        <h3 class="text-xl font-bold text-brand-navy mb-3">Annotation &amp; Data Collection</h3>
+        <p class="text-slate-500 leading-relaxed mb-6 text-sm">Text, image, audio, and video annotation — plus localized data collection from real SEA users with the right demographics and linguistic profiles.</p>
         <ul class="space-y-2.5 mb-8">
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Speech &amp; Audio Datasets</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Conversational Text Corpora</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Demographic Profiling</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Custom Taxonomy Design</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Text classification &amp; NER</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Image &amp; video annotation</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Speech &amp; audio transcription</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Localized dataset creation</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-sm hover:gap-3 transition-all duration-200">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ████████████████████████████████████████
-     CLIENT JOURNEY / PROCESS
-█████████████████████████████████████████ -->
-<section id="process" class="py-24 lg:py-32" style="background:#F1F5F9;">
+<!-- ══════════════════════════════════════
+     OUR PROCESS
+══════════════════════════════════════ -->
+<section id="process" class="py-24 lg:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
-      <span class="section-pill">How It Works</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">From Brief to Delivery —<br/>Your Client Journey</h2>
-      <p class="text-lg text-slate-500 max-w-2xl mx-auto">Wondering what happens after you click "Get Started"? Here's exactly how we work — transparently, step by step.</p>
+      <span class="section-pill">How We Work</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">Simple, Transparent Process</h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">We start small so you can verify quality before scaling. No lock-in, no pressure.</p>
     </div>
 
-    <div class="relative">
-      <div class="hidden lg:block absolute top-10 left-[12%] right-[12%] h-0.5 z-0" style="background:linear-gradient(90deg,#3B4FC8,#1A56DB,#06B6D4,#10B981);"></div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+    <!-- Journey -->
+    <div class="relative mb-20">
+      <div class="hidden lg:block absolute top-10 left-[12%] right-[12%] h-0.5 z-0"
+           style="background:linear-gradient(90deg,#D93025,#F05545,#06B6D4,#10B981);"></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         <div class="process-step text-center reveal">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#D93025,#B71C1C);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">1</span>
           </div>
-          <h4 class="font-bold text-brand-navy mb-2 text-sm">Brief &amp; Scope</h4>
-          <p class="text-slate-500 text-xs leading-relaxed">You share your project requirements, language needs, and quality benchmarks.</p>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Brief Us</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">Share your project scope, target languages, and quality expectations. No commitment needed.</p>
         </div>
         <div class="process-step text-center reveal" style="transition-delay:0.1s;">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#1A56DB,#2563EB);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#1A56DB,#2563EB);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">2</span>
           </div>
-          <h4 class="font-bold text-brand-navy mb-2 text-sm">48hr Pilot Batch</h4>
-          <p class="text-slate-500 text-xs leading-relaxed">We deliver a free pilot sample so you can verify our quality before committing.</p>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Free Pilot</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">We deliver a small pilot batch. You evaluate the quality yourself before deciding to proceed.</p>
         </div>
         <div class="process-step text-center reveal" style="transition-delay:0.2s;">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#2563EB,#0284c7);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#0284c7,#06B6D4);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">3</span>
           </div>
-          <h4 class="font-bold text-brand-navy mb-2 text-sm">QA Alignment</h4>
-          <p class="text-slate-500 text-xs leading-relaxed">We review pilot feedback together and lock in annotation guidelines.</p>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Align &amp; Refine</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">We incorporate your feedback and finalize annotation guidelines before full production.</p>
         </div>
         <div class="process-step text-center reveal" style="transition-delay:0.3s;">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#0284c7,#06B6D4);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#06B6D4,#10B981);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">4</span>
           </div>
-          <h4 class="font-bold text-brand-navy mb-2 text-sm">Full Production</h4>
-          <p class="text-slate-500 text-xs leading-relaxed">Full-scale annotation begins with 3-tier QA running on every batch.</p>
-        </div>
-        <div class="process-step text-center reveal" style="transition-delay:0.4s;">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#06B6D4,#10B981);">
-            <span class="text-white/60 text-xs font-bold">STEP</span>
-            <span class="text-white font-black text-2xl leading-none">5</span>
-          </div>
-          <h4 class="font-bold text-brand-navy mb-2 text-sm">Secure Delivery</h4>
-          <p class="text-slate-500 text-xs leading-relaxed">Datasets delivered in your preferred format with full QA audit reports.</p>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Deliver &amp; Iterate</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">Ongoing delivery with regular QA checks. You stay in control of pace and scope.</p>
         </div>
       </div>
     </div>
 
     <!-- 3-Tier QA -->
-    <div class="mt-20 reveal">
-      <div class="text-center mb-12">
+    <div class="reveal">
+      <div class="text-center mb-10">
         <span class="section-pill">Quality Assurance</span>
         <h3 class="text-2xl sm:text-3xl font-black text-brand-navy mt-4">Our 3-Tier QA Framework</h3>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
-          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
-            <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 text-center">
+          <div class="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#FEF2F2,#FECACA);">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
           </div>
-          <div class="text-brand-indigo font-black text-4xl mb-2">T1</div>
-          <h4 class="font-bold text-brand-navy mb-2">Primary Annotation</h4>
-          <p class="text-slate-500 text-sm">Native-speaker annotators complete initial labeling using standardized guidelines and custom tooling.</p>
+          <div class="text-brand-red font-black text-3xl mb-2">T1</div>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Primary Annotation</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">Native-speaker annotators complete initial tasks following your custom guidelines.</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
-          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
-            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 text-center">
+          <div class="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
           </div>
-          <div class="text-blue-600 font-black text-4xl mb-2">T2</div>
-          <h4 class="font-bold text-brand-navy mb-2">Expert QA Review</h4>
-          <p class="text-slate-500 text-sm">Senior reviewers cross-validate annotations with automated inter-annotator agreement scoring.</p>
+          <div class="text-blue-600 font-black text-3xl mb-2">T2</div>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Peer QA Review</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">A second annotator reviews and validates the work, flagging inconsistencies.</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
-          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
-            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 text-center">
+          <div class="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <div class="text-emerald-600 font-black text-4xl mb-2">T3</div>
-          <h4 class="font-bold text-brand-navy mb-2">Final Accuracy Audit</h4>
-          <p class="text-slate-500 text-sm">QA Lead conducts blind audit on randomized samples before final secure delivery to client.</p>
+          <div class="text-emerald-600 font-black text-3xl mb-2">T3</div>
+          <h4 class="font-bold text-brand-navy mb-2 text-sm">Lead Audit</h4>
+          <p class="text-slate-500 text-xs leading-relaxed">A project lead spot-checks final batches against your agreed quality benchmarks before delivery.</p>
         </div>
       </div>
-    </div>
-
-    <!-- Guarantee Banner -->
-    <div class="mt-12 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal" style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a);border:1px solid rgba(255,255,255,0.1);">
-      <div>
-        <div class="flex items-center gap-2 mb-2">
-          <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          <span class="text-emerald-400 font-bold text-sm">Our Guarantee</span>
-        </div>
-        <h4 class="text-white text-xl font-bold mb-1">Below benchmark? We re-annotate free.</h4>
-        <p class="text-blue-200/70 text-sm">If any delivered batch falls below the agreed accuracy threshold, we fix it at zero additional cost. No questions asked.</p>
-      </div>
-      <a href="#contact" class="flex-shrink-0 btn-primary text-white font-bold px-8 py-3 rounded-xl text-sm inline-flex items-center gap-2">
-        Request Free Pilot
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
     </div>
   </div>
 </section>
 
 
-<!-- ████████████████████████████████████████
+<!-- ══════════════════════════════════════
      SEA ADVANTAGE
-█████████████████████████████████████████ -->
-<section id="advantage" class="py-24 lg:py-32 bg-white">
+══════════════════════════════════════ -->
+<section id="advantage" class="py-24 lg:py-32" style="background:#F8FAFC;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div class="reveal">
-        <span class="section-pill">The SEA Advantage</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-6 leading-tight">Built for the Complexity<br/>of <span class="text-brand-indigo">Southeast Asian</span> Languages</h2>
-        <p class="text-slate-500 leading-relaxed mb-8">SEA is the world's most linguistically diverse region. Our annotators are <strong class="text-slate-700">native speakers from Malaysia</strong> who understand code-switching, regional slang, and cultural nuances that generic vendors consistently miss.</p>
+        <span class="section-pill">Our Focus</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-6 leading-tight">
+          Rooted in Malaysia.<br/>
+          Built for <span class="text-brand-red">Southeast Asia.</span>
+        </h2>
+        <p class="text-slate-500 leading-relaxed mb-8">
+          Xtecq operates out of Kuala Lumpur — one of SEA's most linguistically
+          diverse cities. Our annotators are local professionals who use these
+          languages every day. That lived experience is what makes the difference
+          in the quality of human feedback data.
+        </p>
         <div class="flex flex-wrap gap-3 mb-10">
-          <span class="lang-badge"><span class="text-lg">🇬🇧</span> English (SEA)</span>
-          <span class="lang-badge"><span class="text-lg">🇲🇾</span> Bahasa Melayu</span>
-          <span class="lang-badge"><span class="text-lg">🇨🇳</span> Mandarin</span>
-          <span class="lang-badge"><span class="text-lg">🗣️</span> Cantonese</span>
+          <span class="lang-badge"><span>🇬🇧</span> English (SEA)</span>
+          <span class="lang-badge"><span>🇲🇾</span> Bahasa Melayu</span>
+          <span class="lang-badge"><span>🇨🇳</span> Mandarin</span>
+          <span class="lang-badge"><span>🗣️</span> Cantonese</span>
         </div>
         <div class="space-y-5">
           <div class="flex gap-4 items-start">
-            <div class="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
-              <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+            <div class="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#FEF2F2,#FECACA);">
+              <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800 mb-1">Culturally Aware Annotators</h4>
-              <p class="text-slate-500 text-sm">Native speakers who grasp idiom, sentiment, and cultural context — not just literal meaning.</p>
+              <h4 class="font-bold text-slate-800 mb-1">Local Professionals</h4>
+              <p class="text-slate-500 text-sm">Our annotators are Malaysian professionals — not crowd workers. They bring domain awareness and real cultural fluency to every task.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -891,8 +653,8 @@
               <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389 21.034 21.034 0 01-.554-.6 19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-3.754 1 1 0 111.94-.485c.23.913.558 1.794.977 2.6A17.235 17.235 0 007.39 6H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.992a.869.869 0 01.02.038l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.992A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clip-rule="evenodd"/></svg>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800 mb-1">Code-Switching Expertise</h4>
-              <p class="text-slate-500 text-sm">Fluent in Manglish, Singlish, and Bahasa-English hybrid patterns that define real SEA communication.</p>
+              <h4 class="font-bold text-slate-800 mb-1">Code-Switching Fluency</h4>
+              <p class="text-slate-500 text-sm">Malaysians naturally switch between languages mid-sentence. Our team annotates this the way real users experience it.</p>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -900,51 +662,51 @@
               <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800 mb-1">KL-Based Operations</h4>
-              <p class="text-slate-500 text-sm">Headquartered in Kuala Lumpur — the geographic and business hub of Southeast Asia.</p>
+              <h4 class="font-bold text-slate-800 mb-1">Based in Kuala Lumpur</h4>
+              <p class="text-slate-500 text-sm">We're on the ground in Malaysia — accessible, responsive, and operationally aligned with your time zone.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Right: Language cards -->
+      <!-- Language cards -->
       <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay:0.15s;">
         <div class="col-span-2 rounded-2xl p-6" style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a);">
-          <p class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-3">Live Annotation Sample</p>
-          <p class="text-white font-medium text-sm leading-relaxed mb-4">"Rate this AI response for cultural appropriateness to Malaysian Malay-speaking users, considering religious sensitivities and local idioms."</p>
+          <p class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-3">Example RLHF Task</p>
+          <p class="text-white font-medium text-sm leading-relaxed mb-4">"Rank these two AI responses for a Malaysian user asking about home loan eligibility. Consider tone, accuracy, and local banking context."</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 text-xs font-semibold text-blue-300 rounded-full" style="background:rgba(59,130,246,0.15);">RLHF</span>
-            <span class="px-3 py-1 text-xs font-semibold text-purple-300 rounded-full" style="background:rgba(139,92,246,0.15);">Preference Rank</span>
-            <span class="px-3 py-1 text-xs font-semibold text-emerald-300 rounded-full" style="background:rgba(16,185,129,0.15);">Bahasa Melayu</span>
+            <span class="px-3 py-1 text-xs font-semibold text-red-300 rounded-full" style="background:rgba(217,48,37,0.15);">RLHF</span>
+            <span class="px-3 py-1 text-xs font-semibold text-blue-300 rounded-full" style="background:rgba(59,130,246,0.15);">Preference Ranking</span>
+            <span class="px-3 py-1 text-xs font-semibold text-emerald-300 rounded-full" style="background:rgba(16,185,129,0.15);">English (MY)</span>
           </div>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
           <div class="text-3xl mb-3">🇲🇾</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Bahasa Melayu</h4>
-          <p class="text-slate-400 text-xs mb-3">Formal, informal &amp; regional</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#8B5CF6;" data-width="96"></div></div>
-          <p class="text-slate-400 text-xs">96% dialect coverage</p>
+          <p class="text-slate-400 text-xs mb-3">Formal &amp; informal variants</p>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#D93025;" data-width="92"></div></div>
+          <p class="text-slate-400 text-xs">Primary language focus</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
           <div class="text-3xl mb-3">🇨🇳</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Mandarin</h4>
-          <p class="text-slate-400 text-xs mb-3">Simplified + SEA context</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#06B6D4;" data-width="93"></div></div>
-          <p class="text-slate-400 text-xs">93% regional coverage</p>
+          <p class="text-slate-400 text-xs mb-3">Malaysian Chinese context</p>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#3B82F6;" data-width="85"></div></div>
+          <p class="text-slate-400 text-xs">Strong regional coverage</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
           <div class="text-3xl mb-3">🗣️</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Cantonese</h4>
-          <p class="text-slate-400 text-xs mb-3">Malaysian-Chinese dialect</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#F59E0B;" data-width="90"></div></div>
-          <p class="text-slate-400 text-xs">90% accent coverage</p>
+          <p class="text-slate-400 text-xs mb-3">Malaysian dialect nuances</p>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#F59E0B;" data-width="78"></div></div>
+          <p class="text-slate-400 text-xs">Growing capability</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
           <div class="text-3xl mb-3">🇬🇧</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">English (SEA)</h4>
-          <p class="text-slate-400 text-xs mb-3">Manglish, Singlish &amp; formal</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#3B82F6;" data-width="99"></div></div>
-          <p class="text-slate-400 text-xs">99% variant coverage</p>
+          <p class="text-slate-400 text-xs mb-3">Manglish &amp; formal EN</p>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#10B981;" data-width="95"></div></div>
+          <p class="text-slate-400 text-xs">Highest coverage</p>
         </div>
       </div>
     </div>
@@ -952,124 +714,33 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
-     TRUST METRICS + TESTIMONIALS
-█████████████████████████████████████████ -->
-<section id="metrics" class="py-24 lg:py-32" style="background:linear-gradient(135deg,#050d1f 0%,#0B1F3A 40%,#1e3a8a 100%);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal">
-      <span class="section-pill-dark">Results</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-4">Numbers That Speak for Themselves</h2>
-      <p class="text-blue-200/70 text-lg max-w-xl mx-auto">These aren't marketing numbers. They're contractually committed SLAs we hold ourselves to on every project.</p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-      <div class="metric-card rounded-2xl p-8 text-center reveal">
-        <div class="text-5xl lg:text-6xl font-black text-white mb-3">99%<span class="text-blue-400 text-3xl">+</span></div>
-        <h4 class="text-blue-200 font-semibold text-sm mb-2">Annotation Accuracy</h4>
-        <p class="text-blue-300/50 text-xs">Across all project types &amp; languages</p>
-        <div class="mt-4 h-1 rounded-full" style="background:rgba(255,255,255,0.1);"><div class="h-1 rounded-full w-full" style="background:linear-gradient(90deg,#3B82F6,#60A5FA);"></div></div>
-      </div>
-      <div class="metric-card rounded-2xl p-8 text-center reveal" style="transition-delay:0.1s;">
-        <div class="text-5xl lg:text-6xl font-black text-white mb-3">50<span class="text-blue-400 text-3xl">+</span></div>
-        <h4 class="text-blue-200 font-semibold text-sm mb-2">Vetted Annotators</h4>
-        <p class="text-blue-300/50 text-xs">Native speakers, domain-tested &amp; NDA-signed</p>
-        <div class="mt-4 h-1 rounded-full" style="background:rgba(255,255,255,0.1);"><div class="h-1 rounded-full w-[85%]" style="background:linear-gradient(90deg,#8B5CF6,#A78BFA);"></div></div>
-      </div>
-      <div class="metric-card rounded-2xl p-8 text-center reveal" style="transition-delay:0.2s;">
-        <div class="text-5xl lg:text-6xl font-black text-white mb-3">24/7</div>
-        <h4 class="text-blue-200 font-semibold text-sm mb-2">Delivery Availability</h4>
-        <p class="text-blue-300/50 text-xs">Round-the-clock operations &amp; SLA guarantee</p>
-        <div class="mt-4 h-1 rounded-full" style="background:rgba(255,255,255,0.1);"><div class="h-1 rounded-full w-full" style="background:linear-gradient(90deg,#06B6D4,#67E8F9);"></div></div>
-      </div>
-      <div class="metric-card rounded-2xl p-8 text-center reveal" style="transition-delay:0.3s;">
-        <div class="text-5xl lg:text-6xl font-black text-white mb-3">4</div>
-        <h4 class="text-blue-200 font-semibold text-sm mb-2">Languages Covered</h4>
-        <p class="text-blue-300/50 text-xs">EN · BM · Mandarin · Cantonese</p>
-        <div class="mt-4 h-1 rounded-full" style="background:rgba(255,255,255,0.1);"><div class="h-1 rounded-full w-full" style="background:linear-gradient(90deg,#10B981,#34D399);"></div></div>
-      </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="reveal">
-      <h3 class="text-2xl font-black text-white text-center mb-10">What Our Clients Say</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="testimonial-card bg-white rounded-2xl p-6">
-          <div class="stars mb-4">
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">"Xtecq delivered Bahasa Melayu RLHF data that genuinely captured how Malaysians speak — not textbook Malay. Our model's local response quality improved dramatically."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">AH</div>
-            <div><p class="font-semibold text-brand-navy text-sm">Ahmad H.</p><p class="text-slate-400 text-xs">AI Lead, Regional LLM Startup</p></div>
-          </div>
-        </div>
-        <div class="testimonial-card bg-white rounded-2xl p-6">
-          <div class="stars mb-4">
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">"The 48-hour pilot blew us away. Accuracy was 99.6% on first pass. We've scaled to 50,000+ annotations per month and the quality has never dipped. Truly reliable."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-sm">SL</div>
-            <div><p class="font-semibold text-brand-navy text-sm">Sarah L.</p><p class="text-slate-400 text-xs">Data Ops Manager, AI Platform</p></div>
-          </div>
-        </div>
-        <div class="testimonial-card bg-white rounded-2xl p-6">
-          <div class="stars mb-4">
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed mb-5 italic">"Finding Cantonese annotators who understand Malaysian Chinese culture is nearly impossible. Xtecq solved this overnight. Game-changer for our voice AI project."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white font-bold text-sm">KW</div>
-            <div><p class="font-semibold text-brand-navy text-sm">Kevin W.</p><p class="text-slate-400 text-xs">CTO, Voice AI Company</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ████████████████████████████████████████
-     COMPARISON TABLE
-█████████████████████████████████████████ -->
+<!-- ══════════════════════════════════════
+     COMPARISON — honest version
+══════════════════════════════════════ -->
 <section id="compare" class="py-24 lg:py-32 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
       <span class="section-pill">Why Xtecq</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mt-4 mb-4">Xtecq vs. Generic Annotation Vendors</h2>
-      <p class="text-slate-500 max-w-xl mx-auto">Not all annotation vendors are equal. See why AI teams building for SEA choose Xtecq.</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mt-4 mb-4">What Makes Us Different</h2>
+      <p class="text-slate-500 max-w-xl mx-auto">We're a focused, specialist team — not a generic annotation platform. Here's what that means in practice.</p>
     </div>
     <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm reveal">
       <div class="grid grid-cols-3 text-sm font-bold" style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a);">
-        <div class="px-6 py-4 text-white/60 text-xs uppercase tracking-wider">Feature</div>
-        <div class="px-6 py-4 text-center text-white/60 text-xs uppercase tracking-wider">Generic Vendors</div>
-        <div class="px-6 py-4 text-center text-blue-300 text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-          <div class="w-5 h-5 rounded flex items-center justify-center" style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);"><span class="text-white font-black text-xs">X</span></div>Xtecq
+        <div class="px-6 py-4 text-white/50 text-xs uppercase tracking-wider">What Matters</div>
+        <div class="px-6 py-4 text-center text-white/50 text-xs uppercase tracking-wider">Generic Vendors</div>
+        <div class="px-6 py-4 text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 200 200" fill="none"><path d="M155 30 C155 30, 130 55, 100 100 C70 55, 45 30, 45 30 C30 15, 10 35, 25 55 L70 110 L25 165 C10 185, 30 205, 45 190 L100 140 L155 190 C170 205, 190 185, 175 165 L130 110 L175 55 C190 35, 170 15, 155 30 Z" fill="#ef4444"/><circle cx="158" cy="42" r="16" fill="#ef4444"/><circle cx="158" cy="42" r="8" fill="white"/></svg>
+          <span class="text-red-300">Xtecq</span>
         </div>
       </div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">SEA Language Expertise</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ None</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Deep Native</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Native Speaker Annotators</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ Sometimes</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Always</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">3-Tier QA Pipeline</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Standard</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Cultural Context Understanding</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Yes</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Code-Switching Support</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Yes</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Guaranteed Accuracy Rate</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ 85–90%</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ 99%+</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">24/7 Delivery SLA</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ Rarely</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Yes</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Free Pilot Batch</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ 48-Hour Pilot</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">SEA Language Expertise</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ Rarely</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Core focus</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Native Malaysian Annotators</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ Not guaranteed</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Always</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Cultural Context in Annotation</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ Minimal</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Central to our work</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Code-Switching Handling</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ Not supported</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Natively understood</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Free Pilot Before Commitment</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ Rarely offered</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Standard offering</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Multi-tier QA Review</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ Varies</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ 3-tier process</div></div>
+      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Direct Team Communication</div><div class="px-6 py-4 text-center text-amber-500 font-semibold">⚠️ Often via platform</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Direct contact</div></div>
       <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Malaysia-Based Operations</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Kuala Lumpur</div></div>
-      <div class="compare-row grid grid-cols-3 text-sm border-t border-slate-100"><div class="px-6 py-4 font-medium text-slate-700">Re-annotation Guarantee</div><div class="px-6 py-4 text-center text-red-400 font-semibold">❌ No</div><div class="px-6 py-4 text-center text-emerald-600 font-semibold">✅ Free Re-do</div></div>
     </div>
     <div class="text-center mt-10 reveal">
       <a href="#contact" class="inline-flex items-center gap-2 btn-primary text-white font-bold px-10 py-4 rounded-xl text-base">
@@ -1081,64 +752,64 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
+<!-- ══════════════════════════════════════
      FAQ
-█████████████████████████████████████████ -->
-<section id="faq" class="py-24 lg:py-32" style="background:#F1F5F9;">
+══════════════════════════════════════ -->
+<section id="faq" class="py-24 lg:py-32" style="background:#F8FAFC;">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
       <span class="section-pill">FAQ</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mt-4 mb-4">Frequently Asked Questions</h2>
-      <p class="text-slate-500">Everything you need to know before getting started.</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-brand-navy mt-4 mb-4">Common Questions</h2>
+      <p class="text-slate-500">Honest answers before you reach out.</p>
     </div>
-    <div class="space-y-4" id="faq-container">
+    <div class="space-y-4">
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">What file formats do you deliver datasets in?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">Are you a platform or a services company?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We deliver in all major formats including JSON, JSONL, CSV, XML, COCO, Pascal VOC, YOLO, and custom formats per client requirements. We adapt to your existing data pipeline — not the other way around.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We're a services company. We don't have a self-serve platform — we work directly with clients to understand their project needs and deliver via a managed process. That means more customization, more communication, and more accountability than a generic platform.</p></div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal" style="transition-delay:0.05s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">What is the minimum project size?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">How big is your annotator team?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We work with projects of all sizes — from 500-task pilot batches to enterprise-scale projects with millions of annotations per month. We recommend starting with our free 48-hour pilot to establish quality benchmarks before scaling.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We maintain a core team of trained annotators and can scale based on project requirements. We're transparent about our capacity — we'll tell you upfront whether your project volume is something we can handle, and at what timeline. We don't overpromise.</p></div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal" style="transition-delay:0.1s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">How do you handle data confidentiality and NDAs?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">What does the free pilot include?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">Data confidentiality is non-negotiable for us. All annotators sign comprehensive NDAs before project onboarding. Client data is handled on secure, access-controlled platforms and never used for any purpose outside the contracted project scope.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We'll complete a small sample of your actual task — typically 50 to 200 items depending on complexity — at no cost. This gives you real data to evaluate our quality and annotation style before you decide whether to proceed with a full project.</p></div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal" style="transition-delay:0.15s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">Do you support custom annotation guidelines and taxonomies?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">How do you handle data privacy and NDAs?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">Absolutely. We build custom annotation guidelines from scratch based on your project brief and can work with existing guidelines you've developed. Our QA alignment step ensures annotators are fully calibrated to your exact requirements before full-scale production begins.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">All annotators sign NDAs before working on any client project. Client data is used solely for the purposes of the contracted task and is not shared, retained, or repurposed. We're happy to sign your NDA before any pilot begins.</p></div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal" style="transition-delay:0.2s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">How quickly can you start a new project?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">What file formats do you work with?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We can typically begin a pilot batch within 24–48 hours of receiving your brief and source data. Full-scale production can begin within 3–5 business days after QA alignment is completed. For urgent projects, contact us directly and we'll discuss expedited timelines.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We work with most standard formats — JSON, JSONL, CSV, Excel, and can adapt to client tooling. For image and video annotation we support COCO, Pascal VOC, YOLO, and others. Let us know your stack and we'll confirm compatibility.</p></div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden reveal" style="transition-delay:0.25s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
-          <span class="font-semibold text-brand-navy text-sm pr-4">What happens if accuracy falls below the agreed threshold?</span>
-          <svg class="faq-icon w-5 h-5 text-brand-indigo flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <span class="font-semibold text-brand-navy text-sm pr-4">How long does a typical project take to start?</span>
+          <svg class="faq-icon w-5 h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
-        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We re-annotate the entire affected batch at zero additional cost. Our quality guarantee is contractual — if we don't hit the agreed benchmark, we fix it, no questions asked. This is why our 3-tier QA exists: to ensure it never happens in the first place.</p></div>
+        <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We can usually begin a pilot within a few business days of receiving your brief and sample data. Full project onboarding — including guideline finalization and team calibration — typically takes one to two weeks depending on project complexity.</p></div>
       </div>
 
     </div>
@@ -1146,42 +817,48 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
-     CONTACT / LEAD CAPTURE FORM
-█████████████████████████████████████████ -->
+<!-- ══════════════════════════════════════
+     CONTACT FORM
+══════════════════════════════════════ -->
 <section id="contact" class="py-24 lg:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
+
       <div class="reveal">
-        <span class="section-pill">Get Started</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-6 leading-tight">Ready to Build AI That<br/>Truly Understands SEA?</h2>
-        <p class="text-slate-500 leading-relaxed mb-10">Tell us about your project and we'll respond within 24 hours with a tailored proposal — plus a free 48-hour pilot batch offer.</p>
-        <div class="space-y-6">
+        <span class="section-pill">Get in Touch</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-6 leading-tight">
+          Let's Talk About<br/>Your Data Project
+        </h2>
+        <p class="text-slate-500 leading-relaxed mb-10">
+          Send us a brief description of what you need. We'll respond within one business day
+          with honest feedback on whether we're the right fit — and a free pilot offer if we are.
+        </p>
+        <div class="space-y-5">
           <div class="flex gap-4 items-center">
-            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
-              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div class="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#FEF2F2,#FECACA);">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div>
               <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">Email</p>
-              <a href="mailto:ops@xtecq.com" class="text-brand-navy font-bold hover:text-brand-indigo transition">ops@xtecq.com</a>
+              <a href="mailto:ops@xtecq.com" class="text-brand-navy font-bold hover:text-brand-red transition">ops@xtecq.com</a>
             </div>
           </div>
           <div class="flex gap-4 items-center">
-            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#F0FFF4,#BBF7D0);">
-              <svg class="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <div class="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#F0FFF4,#BBF7D0);">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div>
               <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">WhatsApp</p>
-              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" class="text-brand-navy font-bold hover:text-emerald-600 transition">Chat with us on WhatsApp</a>
+              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" class="text-brand-navy font-bold hover:text-emerald-600 transition">Chat with us directly</a>
             </div>
           </div>
           <div class="flex gap-4 items-center">
-            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
-              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div class="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
-              <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">Location</p>
-              <p class="text-brand-navy font-bold">Kuala Lumpur, Malaysia (GMT+8)</p>
+              <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">Based In</p>
+              <p class="text-brand-navy font-bold">Kuala Lumpur, Malaysia · GMT+8</p>
             </div>
           </div>
         </div>
@@ -1189,59 +866,48 @@
 
       <!-- Form -->
       <div class="reveal" style="transition-delay:0.15s;">
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-8">
-          <h3 class="text-xl font-bold text-brand-navy mb-6">Send Us a Brief</h3>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-8">
+          <h3 class="text-lg font-bold text-brand-navy mb-6">Send a Project Brief</h3>
           <form id="contact-form" class="space-y-5" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Full Name *</label>
+                <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Your Name *</label>
                 <input type="text" name="name" required placeholder="Ahmad Rizal" class="form-input" />
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Company *</label>
-                <input type="text" name="company" required placeholder="Your Company" class="form-input" />
+                <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Company</label>
+                <input type="text" name="company" placeholder="Your Company" class="form-input" />
               </div>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Work Email *</label>
+              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Email *</label>
               <input type="email" name="email" required placeholder="you@company.com" class="form-input" />
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Service Interest *</label>
+              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">What do you need? *</label>
               <select name="service" required class="form-input form-select">
                 <option value="" disabled selected>Select a service...</option>
-                <option value="rlhf">Multilingual RLHF &amp; LLM Tuning</option>
-                <option value="vision">High-Precision Computer Vision</option>
-                <option value="collection">Localized Data Collection</option>
-                <option value="multiple">Multiple Services</option>
-                <option value="other">Other / Not Sure Yet</option>
+                <option value="rlhf">RLHF &amp; Preference Ranking</option>
+                <option value="eval">AI Output Evaluation</option>
+                <option value="annotation">Data Annotation</option>
+                <option value="collection">Data Collection</option>
+                <option value="unsure">Not sure yet — want to discuss</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Estimated Monthly Volume</label>
-              <select name="volume" class="form-input form-select">
-                <option value="" disabled selected>Select volume range...</option>
-                <option value="pilot">Pilot only (&lt; 1,000 tasks)</option>
-                <option value="small">Small (1,000 – 10,000 tasks/mo)</option>
-                <option value="medium">Medium (10,000 – 100,000 tasks/mo)</option>
-                <option value="large">Large (100,000+ tasks/mo)</option>
-              </select>
+              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Tell us about your project *</label>
+              <textarea name="message" rows="4" required placeholder="What language(s), what type of data, rough volume, and timeline if you have one..." class="form-input resize-none"></textarea>
             </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">Tell Us About Your Project</label>
-              <textarea name="message" rows="4" placeholder="Describe your data needs, languages required, timeline, and any specific quality requirements..." class="form-input resize-none"></textarea>
-            </div>
-            <!-- Honeypot -->
             <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
             <button type="submit" id="submit-btn"
                     class="w-full btn-primary text-white font-bold py-4 rounded-xl text-sm flex items-center justify-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-              Send Brief &amp; Request Free Pilot
+              Send Brief
             </button>
-            <p class="text-xs text-slate-400 text-center">🔒 Your data is private. We never share your information. We'll respond within 24 hours.</p>
+            <p class="text-xs text-slate-400 text-center">We'll respond within one business day. No spam, no pressure.</p>
             <div id="form-success" class="hidden rounded-xl p-4 text-center" style="background:#F0FDF4;border:1px solid #BBF7D0;">
-              <div class="text-2xl mb-2">🎉</div>
-              <p class="font-bold text-emerald-700 text-sm">Brief received! We'll be in touch within 24 hours.</p>
+              <div class="text-2xl mb-2">✅</div>
+              <p class="font-bold text-emerald-700 text-sm">Message received. We'll be in touch within one business day.</p>
             </div>
           </form>
         </div>
@@ -1251,23 +917,22 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
-     FINAL CTA BANNER
-█████████████████████████████████████████ -->
-<section class="py-20" style="background:linear-gradient(135deg,#0B1F3A,#1A56DB);">
-  <div class="max-w-4xl mx-auto px-4 text-center reveal">
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
-      Stop Settling for Generic.<br/>
-      <span class="gradient-text">Start Building with Precision.</span>
+<!-- ══════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════ -->
+<section class="py-20" style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a);">
+  <div class="max-w-3xl mx-auto px-4 text-center reveal">
+    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+      Ready to Build Better AI<br/>
+      <span class="gradient-text">for Southeast Asia?</span>
     </h2>
-    <p class="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">Join AI teams who've discovered that Southeast Asian AI excellence starts with Southeast Asian data expertise.</p>
+    <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto">Start with a free pilot. No commitment, no contract. Just real data you can evaluate yourself.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl text-white font-bold text-base">
-        Get Your Free Pilot
+        Request a Free Pilot
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
       <a href="mailto:ops@xtecq.com" class="btn-ghost inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl text-white font-bold text-base">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         Email ops@xtecq.com
       </a>
     </div>
@@ -1275,386 +940,206 @@
 </section>
 
 
-<!-- ████████████████████████████████████████
-     FOOTER — YEAR AUTO-UPDATED BY JS
-█████████████████████████████████████████ -->
+<!-- ══════════════════════════════════════
+     FOOTER — Real logo, auto year
+══════════════════════════════════════ -->
 <footer style="background:#050d1f;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid md:grid-cols-4 gap-12 pb-12" style="border-bottom:1px solid rgba(255,255,255,0.07);">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-2.5 mb-5">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
-            <span class="text-white font-black text-xl">X</span>
-          </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-3 gap-10 pb-10" style="border-bottom:1px solid rgba(255,255,255,0.07);">
+
+      <div class="md:col-span-1">
+        <!-- Real logo in footer (white tinted version) -->
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M155 30 C155 30, 130 55, 100 100 C70 55, 45 30, 45 30 C30 15, 10 35, 25 55 L70 110 L25 165 C10 185, 30 205, 45 190 L100 140 L155 190 C170 205, 190 185, 175 165 L130 110 L175 55 C190 35, 170 15, 155 30 Z" fill="#ef4444"/>
+            <circle cx="158" cy="42" r="16" fill="#ef4444"/>
+            <circle cx="158" cy="42" r="8" fill="white"/>
+          </svg>
           <div>
-            <div class="text-xl font-black text-white tracking-tight">Xtecq<span class="text-blue-400">.</span></div>
+            <div class="text-lg font-black text-white tracking-tight">Xtecq<span class="text-red-400">.</span></div>
             <div class="text-[9px] text-white/30 font-semibold uppercase tracking-widest">AI Data Solutions</div>
           </div>
         </div>
-        <p class="text-white/40 text-sm leading-relaxed mb-5 max-w-sm">Southeast Asia's premier AI data solutions partner — delivering high-precision multilingual annotation, RLHF, and localized data collection at enterprise scale.</p>
-        <p class="text-white/25 text-xs">A premier AI data brand under <span class="text-white/40 font-semibold">West Corporate Sdn Bhd</span></p>
+        <p class="text-white/35 text-sm leading-relaxed mb-4 max-w-xs">SEA multilingual AI data — RLHF, AI evaluation, and annotation built for Southeast Asia's linguistic reality.</p>
+        <p class="text-white/20 text-xs">A brand under <span class="text-white/35">West Corporate Sdn Bhd</span></p>
       </div>
+
       <div>
-        <h5 class="text-white/60 font-bold mb-4 text-xs uppercase tracking-widest">Navigation</h5>
-        <ul class="space-y-3">
-          <li><a href="#services"  class="text-white/40 text-sm hover:text-white transition">Services</a></li>
-          <li><a href="#process"   class="text-white/40 text-sm hover:text-white transition">Our Process</a></li>
-          <li><a href="#advantage" class="text-white/40 text-sm hover:text-white transition">SEA Advantage</a></li>
-          <li><a href="#compare"   class="text-white/40 text-sm hover:text-white transition">Why Xtecq</a></li>
-          <li><a href="#faq"       class="text-white/40 text-sm hover:text-white transition">FAQ</a></li>
-          <li><a href="#contact"   class="text-white/40 text-sm hover:text-white transition">Contact Us</a></li>
+        <h5 class="text-white/50 font-bold mb-4 text-xs uppercase tracking-widest">Pages</h5>
+        <ul class="space-y-2.5">
+          <li><a href="#services"  class="text-white/35 text-sm hover:text-white transition">Services</a></li>
+          <li><a href="#process"   class="text-white/35 text-sm hover:text-white transition">How We Work</a></li>
+          <li><a href="#advantage" class="text-white/35 text-sm hover:text-white transition">SEA Focus</a></li>
+          <li><a href="#compare"   class="text-white/35 text-sm hover:text-white transition">Why Xtecq</a></li>
+          <li><a href="#faq"       class="text-white/35 text-sm hover:text-white transition">FAQ</a></li>
+          <li><a href="#contact"   class="text-white/35 text-sm hover:text-white transition">Contact</a></li>
         </ul>
       </div>
+
       <div>
-        <h5 class="text-white/60 font-bold mb-4 text-xs uppercase tracking-widest">Contact</h5>
+        <h5 class="text-white/50 font-bold mb-4 text-xs uppercase tracking-widest">Contact</h5>
         <ul class="space-y-3">
-          <li><a href="mailto:ops@xtecq.com" class="text-white/40 text-sm hover:text-white transition flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>ops@xtecq.com</a></li>
-          <li class="flex items-center gap-2 text-white/40 text-sm"><svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Kuala Lumpur, Malaysia</li>
-          <li class="flex items-center gap-2 text-white/40 text-sm"><svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>24/7 · GMT+8</li>
+          <li><a href="mailto:ops@xtecq.com" class="text-white/35 text-sm hover:text-white transition flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>ops@xtecq.com</a></li>
+          <li class="flex items-center gap-2 text-white/35 text-sm"><svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Kuala Lumpur, Malaysia</li>
         </ul>
       </div>
     </div>
 
-    <!-- ── BUG #1 FIX: Year now auto-set by JS; fallback shows 2026 ── -->
-    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-white/25 text-xs text-center md:text-left">
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-white/20 text-xs text-center md:text-left">
         © <span class="footer-year">2026</span> Xtecq. A premier AI data brand under West Corporate Sdn Bhd. All rights reserved.
       </p>
-      <p class="text-white/20 text-xs">
-        Kuala Lumpur, Malaysia · ops@xtecq.com
-      </p>
+      <p class="text-white/15 text-xs">Kuala Lumpur, Malaysia · ops@xtecq.com</p>
     </div>
   </div>
 </footer>
 
 
-<!-- ████████████████████████████████████████
+<!-- ══════════════════════════════════════
      WHATSAPP WIDGET
-█████████████████████████████████████████ -->
+══════════════════════════════════════ -->
 <div id="wa-widget">
   <div id="wa-panel">
     <div class="p-4" style="background:#075E54;">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
         <div>
-          <p class="text-white font-bold text-sm">Xtecq Support</p>
-          <p class="text-white/70 text-xs">Typically replies instantly</p>
+          <p class="text-white font-bold text-sm">Xtecq</p>
+          <p class="text-white/60 text-xs">ops@xtecq.com</p>
         </div>
       </div>
     </div>
     <div class="p-4 bg-white">
-      <div class="rounded-xl p-3 text-sm text-slate-700 mb-4" style="background:#F0F0F0;max-width:85%;">
-        👋 Hi! Ready to discuss your AI data project? We can start with a <strong>free 48-hour pilot</strong>.
+      <div class="rounded-xl p-3 text-sm text-slate-700 mb-4" style="background:#F0F0F0;max-width:88%;">
+        👋 Hi! Tell us what you're working on and we'll see if we can help.
       </div>
-      <a href="https://wa.me/60123456789?text=Hi%20Xtecq!%20I%27m%20interested%20in%20your%20AI%20data%20solutions."
+      <a href="https://wa.me/60123456789?text=Hi%20Xtecq!%20I'd%20like%20to%20discuss%20an%20AI%20data%20project."
          target="_blank" rel="noopener noreferrer"
          class="block w-full text-center py-3 rounded-xl text-white font-bold text-sm"
          style="background:#25D366;">
-        Start WhatsApp Chat →
+        Open WhatsApp →
       </a>
     </div>
   </div>
-  <div id="wa-bubble" role="button" aria-label="Open WhatsApp chat" tabindex="0">
-    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div id="wa-bubble" role="button" aria-label="Chat on WhatsApp" tabindex="0">
+    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </div>
 </div>
 
-
-<!-- SCROLL TO TOP -->
 <button id="scroll-top" aria-label="Back to top">
-  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-  </svg>
+  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
 </button>
 
 
-<!-- ████████████████████████████████████████
-     JAVASCRIPT — ALL BUGS FIXED
-█████████████████████████████████████████ -->
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
 <script>
-/* ══════════════════════════════════════
-   BUG #1 FIX: AUTO YEAR — uses querySelectorAll
-   Targets all .footer-year spans (supports multiple instances)
-══════════════════════════════════════ */
-document.querySelectorAll('.footer-year').forEach(function(el) {
-  el.textContent = new Date().getFullYear();
-});
+/* Auto year */
+document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
-
-/* ══════════════════════════════════════
-   BUG #6 FIX: PARTICLE CANVAS — ResizeObserver for accurate sizing
-══════════════════════════════════════ */
-(function () {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx    = canvas.getContext('2d');
-  let particles = [];
-  let W = 0, H = 0;
-
-  function setSize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  // Use ResizeObserver for accurate canvas sizing (Bug #6 fix)
-  if (window.ResizeObserver) {
-    new ResizeObserver(function() { setSize(); createParticles(); }).observe(canvas.parentElement);
-  } else {
-    window.addEventListener('resize', function() { setSize(); createParticles(); });
-  }
+/* Particle canvas */
+(function(){
+  var canvas = document.getElementById('particle-canvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [], W = 0, H = 0;
+  function setSize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  if(window.ResizeObserver){ new ResizeObserver(function(){ setSize(); init(); }).observe(canvas.parentElement); }
+  else { window.addEventListener('resize', function(){ setSize(); init(); }); }
   setSize();
-
-  function rand(a, b) { return Math.random() * (b - a) + a; }
-
-  function createParticles() {
-    particles = [];
-    var count = Math.max(20, Math.floor((W * H) / 18000));
-    for (var i = 0; i < count; i++) {
-      particles.push({ x: rand(0,W), y: rand(0,H), r: rand(0.5,2), vx: rand(-0.15,0.15), vy: rand(-0.15,0.15), o: rand(0.15,0.5) });
-    }
+  function rand(a,b){ return Math.random()*(b-a)+a; }
+  function init(){
+    particles=[];
+    var n=Math.max(15,Math.floor(W*H/20000));
+    for(var i=0;i<n;i++) particles.push({x:rand(0,W),y:rand(0,H),r:rand(0.4,1.8),vx:rand(-0.12,0.12),vy:rand(-0.12,0.12),o:rand(0.1,0.4)});
   }
-  createParticles();
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(147,197,253,' + p.o + ')';
-      ctx.fill();
-    }
-    for (var i = 0; i < particles.length; i++) {
-      for (var j = i + 1; j < particles.length; j++) {
-        var dx = particles[i].x - particles[j].x;
-        var dy = particles[i].y - particles[j].y;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(147,197,253,' + (0.06 * (1 - dist / 120)) + ')';
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
+  init();
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(200,200,255,'+p.o+')'; ctx.fill();
+    });
+    for(var i=0;i<particles.length;i++) for(var j=i+1;j<particles.length;j++){
+      var dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+      var d=Math.sqrt(dx*dx+dy*dy);
+      if(d<110){ ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.strokeStyle='rgba(200,200,255,'+(0.05*(1-d/110))+')'; ctx.lineWidth=0.5; ctx.stroke(); }
     }
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
+/* Nav */
+var navbar=document.getElementById('navbar');
+window.addEventListener('scroll',function(){ navbar.classList.toggle('nav-scrolled',window.scrollY>20); });
 
-/* ══════════════════════════════════════
-   STICKY NAV SHADOW
-══════════════════════════════════════ */
-var navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
-  navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
-});
+/* Hamburger */
+var ham=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu'),io=document.getElementById('icon-open'),ic=document.getElementById('icon-close'),open=false;
+ham.addEventListener('click',function(){ open=!open; mm.classList.toggle('open',open); io.classList.toggle('hidden',open); ic.classList.toggle('hidden',!open); });
+mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ open=false; mm.classList.remove('open'); io.classList.remove('hidden'); ic.classList.add('hidden'); }); });
 
+/* Reveal */
+var revEls=document.querySelectorAll('.reveal');
+new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } }); },{threshold:0.08,rootMargin:'0px 0px -30px 0px'}).observe ? (function(){ var o=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible');} }); },{threshold:0.08,rootMargin:'0px 0px -30px 0px'}); revEls.forEach(function(el){o.observe(el);}); })() : revEls.forEach(function(el){el.classList.add('visible');});
 
-/* ══════════════════════════════════════
-   MOBILE HAMBURGER
-══════════════════════════════════════ */
-var hamburger  = document.getElementById('hamburger');
-var mobileMenu = document.getElementById('mobile-menu');
-var iconOpen   = document.getElementById('icon-open');
-var iconClose  = document.getElementById('icon-close');
-var menuOpen   = false;
+/* Progress bars */
+var bars=document.querySelectorAll('.progress-bar');
+new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){e.target.style.width=e.target.getAttribute('data-width')+'%';} }); },{threshold:0.5}).observe ? (function(){ var o=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){e.target.style.width=e.target.getAttribute('data-width')+'%';} }); },{threshold:0.5}); bars.forEach(function(b){o.observe(b);}); })() : bars.forEach(function(b){b.style.width=b.getAttribute('data-width')+'%';});
 
-hamburger.addEventListener('click', function() {
-  menuOpen = !menuOpen;
-  mobileMenu.classList.toggle('open', menuOpen);
-  iconOpen.classList.toggle('hidden', menuOpen);
-  iconClose.classList.toggle('hidden', !menuOpen);
-});
-
-mobileMenu.querySelectorAll('a').forEach(function(link) {
-  link.addEventListener('click', function() {
-    menuOpen = false;
-    mobileMenu.classList.remove('open');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
+/* FAQ */
+document.querySelectorAll('.faq-trigger').forEach(function(t){
+  t.addEventListener('click',function(){
+    var ans=t.closest('.faq-item').querySelector('.faq-answer');
+    var ico=t.querySelector('.faq-icon');
+    var was=ans.classList.contains('open');
+    document.querySelectorAll('.faq-answer').forEach(function(a){a.classList.remove('open');});
+    document.querySelectorAll('.faq-icon').forEach(function(i){i.classList.remove('open');});
+    if(!was){ans.classList.add('open');ico.classList.add('open');}
   });
 });
 
+/* WhatsApp */
+var waPanel=document.getElementById('wa-panel'),waBubble=document.getElementById('wa-bubble');
+function toggleWA(){waPanel.classList.toggle('open');}
+waBubble.addEventListener('click',toggleWA);
+waBubble.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleWA();}});
+document.addEventListener('click',function(e){if(!document.getElementById('wa-widget').contains(e.target))waPanel.classList.remove('open');});
 
-/* ══════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════ */
-var revealEls = document.querySelectorAll('.reveal');
-var revealObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(function(el) { revealObs.observe(el); });
+/* Scroll top */
+var stb=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){stb.classList.toggle('visible',window.scrollY>400);});
+stb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 
-
-/* ══════════════════════════════════════
-   PROGRESS BARS (scroll animated)
-══════════════════════════════════════ */
-var progressBars = document.querySelectorAll('.progress-bar');
-var barObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.style.width = entry.target.getAttribute('data-width') + '%';
-      barObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-progressBars.forEach(function(bar) { barObs.observe(bar); });
-
-
-/* ══════════════════════════════════════
-   FAQ ACCORDION
-══════════════════════════════════════ */
-document.querySelectorAll('.faq-trigger').forEach(function(trigger) {
-  trigger.addEventListener('click', function() {
-    var item   = trigger.closest('.faq-item');
-    var answer = item.querySelector('.faq-answer');
-    var icon   = trigger.querySelector('.faq-icon');
-    var isOpen = answer.classList.contains('open');
-
-    document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
-    document.querySelectorAll('.faq-icon').forEach(function(i)   { i.classList.remove('open'); });
-
-    if (!isOpen) {
-      answer.classList.add('open');
-      icon.classList.add('open');
-    }
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=this.getAttribute('href'); if(h==='#')return;
+    var t=document.querySelector(h); if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'});}
   });
 });
 
-
-/* ══════════════════════════════════════
-   WHATSAPP WIDGET — keyboard accessible
-══════════════════════════════════════ */
-var waPanel  = document.getElementById('wa-panel');
-var waBubble = document.getElementById('wa-bubble');
-
-function toggleWA() { waPanel.classList.toggle('open'); }
-
-waBubble.addEventListener('click', toggleWA);
-waBubble.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleWA(); }
-});
-
-document.addEventListener('click', function(e) {
-  if (!document.getElementById('wa-widget').contains(e.target)) {
-    waPanel.classList.remove('open');
+/* Form */
+var form=document.getElementById('contact-form'),sb=document.getElementById('submit-btn'),sm=document.getElementById('form-success');
+if(form){ form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  if(form.querySelector('[name="_gotcha"]').value)return;
+  sb.disabled=true; sb.innerHTML='<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Sending...';
+  var action=form.getAttribute('action')||'';
+  if(action.includes('YOUR_FORM_ID')||action===''){
+    setTimeout(function(){form.reset();sb.style.display='none';sm.classList.remove('hidden');},900); return;
   }
-});
-
-
-/* ══════════════════════════════════════
-   SCROLL TO TOP
-══════════════════════════════════════ */
-var scrollTopBtn = document.getElementById('scroll-top');
-window.addEventListener('scroll', function() {
-  scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
-});
-scrollTopBtn.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-
-/* ══════════════════════════════════════
-   SMOOTH ANCHOR SCROLL (offset for sticky nav)
-══════════════════════════════════════ */
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var href   = this.getAttribute('href');
-    if (href === '#') return;
-    var target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
-    }
-  });
-});
-
-
-/* ══════════════════════════════════════
-   BUG #9 FIX: ACTIVE NAV — threshold 0.25
-══════════════════════════════════════ */
-var sections = document.querySelectorAll('section[id]');
-var navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-var activeObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      navLinks.forEach(function(link) {
-        link.classList.remove('text-brand-indigo', 'bg-brand-light');
-        if (link.getAttribute('href') === '#' + entry.target.id) {
-          link.classList.add('text-brand-indigo', 'bg-brand-light');
-        }
-      });
-    }
-  });
-}, { threshold: 0.25 }); // Bug #9 fix: was 0.4, too high for mobile
-
-sections.forEach(function(s) { activeObs.observe(s); });
-
-
-/* ══════════════════════════════════════
-   CONTACT FORM — graceful Formspree submission
-   BUG #4 FIX: proper fallback when ID is placeholder
-══════════════════════════════════════ */
-var form       = document.getElementById('contact-form');
-var submitBtn  = document.getElementById('submit-btn');
-var successMsg = document.getElementById('form-success');
-
-if (form) {
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    // Honeypot check
-    if (form.querySelector('[name="_gotcha"]').value) return;
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Sending...';
-
-    var formAction = form.getAttribute('action') || '';
-
-    // BUG #4 FIX: graceful demo mode when Formspree not configured
-    if (formAction.includes('YOUR_FORM_ID') || formAction === '') {
-      setTimeout(function() {
-        form.reset();
-        submitBtn.style.display = 'none';
-        successMsg.classList.remove('hidden');
-      }, 1000);
-      return;
-    }
-
-    try {
-      var res = await fetch(formAction, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.reset();
-        submitBtn.style.display = 'none';
-        successMsg.classList.remove('hidden');
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (err) {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '⚠️ Error — Please try again';
-      submitBtn.style.background = 'linear-gradient(135deg,#EF4444,#DC2626)';
-    }
-  });
-}
+  try{
+    var r=await fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(r.ok){form.reset();sb.style.display='none';sm.classList.remove('hidden');}
+    else throw new Error();
+  }catch(err){sb.disabled=false;sb.textContent='⚠️ Error — try again';}
+}); }
 </script>
 
 </body>
