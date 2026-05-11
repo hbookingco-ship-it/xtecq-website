@@ -1,57 +1,1127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xtecq | Premium AI Data Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xtecq | High-Precision SEA AI Data Solutions</title>
+  <meta name="description" content="Xtecq delivers enterprise-grade AI data solutions — multilingual RLHF, computer vision annotation, and localized data collection across Southeast Asia." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              navy:   '#0B1F3A',
+              indigo: '#3B4FC8',
+              blue:   '#1A56DB',
+              light:  '#E8EEFF',
+              slate:  '#64748B',
+              dark:   '#0F172A',
+            }
+          },
+          animation: {
+            'fade-up':   'fadeUp 0.6s ease forwards',
+            'fade-in':   'fadeIn 0.8s ease forwards',
+            'count-up':  'countUp 2s ease forwards',
+          },
+          keyframes: {
+            fadeUp:  { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            fadeIn:  { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ── Base ── */
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F8FAFC; color: #0F172A; }
+
+    /* ── Gradient Hero ── */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0B1F3A 0%, #1a2f5e 40%, #1e3a8a 70%, #1d4ed8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-gradient::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(59,79,200,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(29,78,216,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ── Grid dots overlay ── */
+    .grid-overlay {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      position: absolute; inset: 0;
+      pointer-events: none;
+    }
+
+    /* ── Glassmorphism card ── */
+    .glass-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    /* ── Service card hover ── */
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #E2E8F0;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(59,79,200,0.15);
+      border-color: #3B4FC8;
+    }
+
+    /* ── Step connector line ── */
+    .step-connector {
+      position: absolute;
+      top: 28px; left: calc(50% + 40px);
+      width: calc(100% - 80px);
+      height: 2px;
+      background: linear-gradient(90deg, #3B4FC8, #1A56DB);
+    }
+
+    /* ── Metric card ── */
+    .metric-card {
+      background: linear-gradient(135deg, #0B1F3A 0%, #1e3a8a 100%);
+    }
+
+    /* ── Sticky nav shadow on scroll ── */
+    .nav-scrolled { box-shadow: 0 2px 24px rgba(11,31,58,0.12); }
+
+    /* ── Language badge ── */
+    .lang-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, rgba(59,79,200,0.1), rgba(26,86,219,0.1));
+      border: 1px solid rgba(59,79,200,0.25);
+      font-weight: 600;
+      color: #1e3a8a;
+      transition: all 0.2s;
+    }
+    .lang-badge:hover { background: linear-gradient(135deg,#3B4FC8,#1A56DB); color: #fff; border-color: transparent; }
+
+    /* ── CTA gradient button ── */
+    .btn-primary {
+      background: linear-gradient(135deg, #3B4FC8 0%, #1A56DB 100%);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 4px 20px rgba(59,79,200,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,79,200,0.5); opacity: 0.92; }
+
+    /* ── Scroll reveal ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Nav mobile menu ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    /* ── Section label pill ── */
+    .section-pill {
+      display: inline-block;
+      padding: 6px 18px;
+      background: rgba(59,79,200,0.1);
+      color: #3B4FC8;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(59,79,200,0.2);
+    }
+
+    /* ── Counter animation ── */
+    .counter { display: inline-block; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F1F5F9; }
+    ::-webkit-scrollbar-thumb { background: #3B4FC8; border-radius: 3px; }
+
+    @media (max-width: 768px) {
+      .step-connector { display: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-    <!-- Navigation -->
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center">
-        <div class="text-2xl font-bold text-blue-600">Xtecq</div>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="mailto:ops@xtecq.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Contact Us</a>
-        </div>
-    </nav>
+<body class="antialiased">
 
-    <!-- Hero Section -->
-    <header class="py-20 px-10 text-center bg-gradient-to-r from-blue-50 to-indigo-50">
-        <h1 class="text-5xl font-extrabold mb-4">Elevating AI with Quality SEA Data</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Xtecq provides high-precision data labeling and RLHF services, specializing in Southeast Asian multilingual datasets.</p>
-    </header>
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           STICKY NAVIGATION          ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
 
-    <!-- Services -->
-    <section class="py-16 px-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="text-xl font-bold mb-3">Multilingual RLHF</h3>
-            <p class="text-gray-600 text-sm">Expert human feedback for LLMs in English, Malay, and Mandarin to ensure cultural and linguistic accuracy.</p>
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center"
+             style="background: linear-gradient(135deg,#3B4FC8,#1A56DB);">
+          <span class="text-white font-black text-lg tracking-tight">X</span>
         </div>
-        <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="text-xl font-bold mb-3">Computer Vision</h3>
-            <p class="text-gray-600 text-sm">High-quality image annotation, object detection, and segmentation for autonomous systems and retail AI.</p>
-        </div>
-        <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="text-xl font-bold mb-3">Data Collection</h3>
-            <p class="text-gray-600 text-sm">Localized Southeast Asian audio, text, and video data collection tailored to your model's needs.</p>
-        </div>
-    </section>
+        <span class="text-xl font-black tracking-tight text-brand-navy">
+          Xtecq<span class="text-brand-indigo">.</span>
+        </span>
+      </a>
 
-    <!-- About Section -->
-    <section class="py-16 bg-white px-10 text-center">
-        <h2 class="text-3xl font-bold mb-6">Why Xtecq?</h2>
-        <div class="flex flex-wrap justify-center gap-10">
-            <div><span class="block text-3xl font-bold text-blue-600">99%</span><span class="text-gray-500">Accuracy Rate</span></div>
-            <div><span class="block text-3xl font-bold text-blue-600">3-Tier</span><span class="text-gray-500">QA Process</span></div>
-            <div><span class="block text-3xl font-bold text-blue-600">50+</span><span class="text-gray-500">Vetted Annotators</span></div>
-        </div>
-    </section>
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#services" class="text-sm font-500 text-slate-600 hover:text-brand-indigo transition-colors duration-200">Services</a>
+        <a href="#process"  class="text-sm font-500 text-slate-600 hover:text-brand-indigo transition-colors duration-200">Our Process</a>
+        <a href="#advantage" class="text-sm font-500 text-slate-600 hover:text-brand-indigo transition-colors duration-200">SEA Advantage</a>
+        <a href="#metrics"  class="text-sm font-500 text-slate-600 hover:text-brand-indigo transition-colors duration-200">Results</a>
+      </div>
 
-    <!-- Footer -->
-    <footer class="py-10 bg-gray-900 text-gray-400 text-center text-sm">
-        <p class="mb-2">Email: ops@xtecq.com</p>
-        <p>© 2024 Xtecq. A premier AI data brand under <strong>West Corporate Sdn Bhd</strong>.</p>
-        <p class="mt-4 opacity-50">Kuala Lumpur, Malaysia</p>
-    </footer>
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-4">
+        <a href="mailto:ops@xtecq.com"
+           class="hidden lg:inline-flex items-center gap-2 btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Get in Touch
+        </a>
+        <button id="hamburger" class="lg:hidden p-2 rounded-md text-slate-600 hover:text-brand-indigo" aria-label="Menu">
+          <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden pb-4">
+      <div class="flex flex-col gap-1 border-t border-slate-100 pt-4">
+        <a href="#services"  class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-lg transition">Services</a>
+        <a href="#process"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-lg transition">Our Process</a>
+        <a href="#advantage" class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-lg transition">SEA Advantage</a>
+        <a href="#metrics"   class="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-light hover:text-brand-indigo rounded-lg transition">Results</a>
+        <a href="mailto:ops@xtecq.com"
+           class="mx-4 mt-2 text-center btn-primary text-white text-sm font-semibold px-5 py-3 rounded-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║             HERO SECTION             ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="hero-gradient min-h-screen flex items-center pt-20">
+  <div class="grid-overlay"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Copy -->
+      <div class="text-white">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+             style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs font-semibold tracking-widest uppercase text-blue-200">
+            Southeast Asia's Premier AI Data Partner
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
+          Elevating AI Models<br/>
+          with <span class="text-transparent bg-clip-text"
+                     style="background-image:linear-gradient(90deg,#60A5FA,#A78BFA);">
+            High-Precision
+          </span><br/>
+          SEA Data
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="text-lg text-blue-100 leading-relaxed mb-10 max-w-xl">
+          From multilingual RLHF to computer vision annotation —
+          Xtecq delivers enterprise-grade AI training data engineered
+          for Southeast Asia's linguistic and cultural complexity.
+          <span class="font-semibold text-white">99%+ accuracy. Every time.</span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="mailto:ops@xtecq.com"
+             class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-base">
+            Get Started
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#services"
+             class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base text-white
+                    border border-white/25 hover:border-white/50 hover:bg-white/10 transition-all duration-200">
+            Explore Services
+          </a>
+        </div>
+
+        <!-- Trust Row -->
+        <div class="flex flex-wrap gap-6 mt-12 pt-10"
+             style="border-top: 1px solid rgba(255,255,255,0.12);">
+          <div class="text-center">
+            <div class="text-2xl font-black text-white">99%<span class="text-blue-300">+</span></div>
+            <div class="text-xs text-blue-200 mt-1">Accuracy Rate</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-center">
+            <div class="text-2xl font-black text-white">50<span class="text-blue-300">+</span></div>
+            <div class="text-xs text-blue-200 mt-1">Vetted Annotators</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-center">
+            <div class="text-2xl font-black text-white">24/7</div>
+            <div class="text-xs text-blue-200 mt-1">Delivery SLA</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-center">
+            <div class="text-2xl font-black text-white">4</div>
+            <div class="text-xs text-blue-200 mt-1">Languages Covered</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual Panel -->
+      <div class="hidden lg:block">
+        <div class="glass-card rounded-2xl p-6 relative">
+          <!-- Mock Dashboard Header -->
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <p class="text-white/60 text-xs uppercase tracking-widest font-semibold">Live QA Dashboard</p>
+              <p class="text-white font-bold text-lg mt-1">Annotation Quality Monitor</p>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full"
+                 style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3);">
+              <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+              <span class="text-emerald-400 text-xs font-semibold">Live</span>
+            </div>
+          </div>
+
+          <!-- Accuracy bar -->
+          <div class="mb-5">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-white/70 text-sm">Overall Accuracy</span>
+              <span class="text-white font-bold">99.4%</span>
+            </div>
+            <div class="h-2 rounded-full" style="background:rgba(255,255,255,0.1);">
+              <div class="h-2 rounded-full w-[99%]"
+                   style="background:linear-gradient(90deg,#3B82F6,#8B5CF6);"></div>
+            </div>
+          </div>
+
+          <!-- Language rows -->
+          <div class="space-y-4">
+            <div v-for="lang in langs">
+              <div class="flex justify-between items-center mb-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🇬🇧</span>
+                  <span class="text-white/80 text-sm font-medium">English (SEA)</span>
+                </div>
+                <span class="text-white text-sm font-bold">99.7%</span>
+              </div>
+              <div class="h-1.5 rounded-full" style="background:rgba(255,255,255,0.1);">
+                <div class="h-1.5 rounded-full w-[99.7%]" style="background:#3B82F6;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🇲🇾</span>
+                  <span class="text-white/80 text-sm font-medium">Bahasa Melayu</span>
+                </div>
+                <span class="text-white text-sm font-bold">99.2%</span>
+              </div>
+              <div class="h-1.5 rounded-full" style="background:rgba(255,255,255,0.1);">
+                <div class="h-1.5 rounded-full w-[99.2%]" style="background:#8B5CF6;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🇨🇳</span>
+                  <span class="text-white/80 text-sm font-medium">Mandarin / Cantonese</span>
+                </div>
+                <span class="text-white text-sm font-bold">99.1%</span>
+              </div>
+              <div class="h-1.5 rounded-full" style="background:rgba(255,255,255,0.1);">
+                <div class="h-1.5 rounded-full w-[99.1%]" style="background:#06B6D4;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-3 mt-6">
+            <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.07);">
+              <div class="text-lg font-black text-white">3</div>
+              <div class="text-white/50 text-xs mt-1">QA Tiers</div>
+            </div>
+            <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.07);">
+              <div class="text-lg font-black text-emerald-400">✓</div>
+              <div class="text-white/50 text-xs mt-1">ISO Ready</div>
+            </div>
+            <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,0.07);">
+              <div class="text-lg font-black text-white">24h</div>
+              <div class="text-white/50 text-xs mt-1">Turnaround</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           SERVICES SECTION           ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section id="services" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <span class="section-pill">What We Do</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">
+        Enterprise AI Data Services
+      </h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        Purpose-built data solutions tailored for AI companies operating in or
+        expanding into the Southeast Asian market.
+      </p>
+    </div>
+
+    <!-- Service Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1: RLHF -->
+      <div class="service-card bg-white rounded-2xl p-8 reveal">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+             style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
+          <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+        <div class="inline-block px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">
+          LLM Training
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3">
+          Multilingual RLHF &amp; LLM Tuning
+        </h3>
+        <p class="text-slate-500 leading-relaxed mb-6">
+          Human feedback data generation for Reinforcement Learning from Human Feedback (RLHF),
+          preference ranking, instruction tuning, and red-teaming — delivered in
+          English, Malay, Mandarin, and Cantonese.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Preference Ranking & Scoring
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Instruction Following Datasets
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-indigo-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Cultural Nuance Validation
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Computer Vision -->
+      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.1s">
+        <!-- Featured badge -->
+        <div class="absolute top-0 right-8 -translate-y-1/2">
+          <span class="inline-block px-3 py-1 text-xs font-bold text-white rounded-full"
+                style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
+            Most Popular
+          </span>
+        </div>
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+             style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </div>
+        <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">
+          Vision AI
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3">
+          High-Precision Computer Vision
+        </h3>
+        <p class="text-slate-500 leading-relaxed mb-6">
+          Pixel-accurate image and video annotation services including bounding boxes,
+          semantic segmentation, keypoint detection, and 3D LiDAR labeling —
+          optimized for SEA environments and demographics.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Bounding Box & Segmentation
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            OCR & Document Parsing
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Video Frame Annotation
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Data Collection -->
+      <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.2s">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+             style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+        </div>
+        <div class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full mb-4 tracking-wide uppercase">
+          Data Collection
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3">
+          Localized Data Collection
+        </h3>
+        <p class="text-slate-500 leading-relaxed mb-6">
+          End-to-end data acquisition pipelines — from audio speech recording in
+          regional accents and dialects, to curated text corpora, conversational
+          datasets, and survey-based behavioral data from across Malaysia and SEA.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Speech & Audio Datasets
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Conversational Text Corpora
+          </li>
+          <li class="flex items-center gap-2 text-sm text-slate-600">
+            <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Demographic Profiling
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           OUR PROCESS (QA)           ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section id="process" class="py-24 lg:py-32" style="background:#F1F5F9;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <span class="section-pill">Our Process</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-4">
+        3-Tier Quality Assurance
+      </h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+        Every dataset we deliver passes through a rigorous, multi-layer QA pipeline
+        engineered to maintain 99%+ accuracy at scale.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-8 relative">
+
+      <!-- Step 1 -->
+      <div class="relative text-center reveal">
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xl mb-6 shadow-lg relative z-10"
+               style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
+            1
+          </div>
+          <div class="w-px h-8 md:hidden" style="background:linear-gradient(180deg,#3B4FC8,transparent);"></div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 w-full">
+            <div class="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Tier 1: Primary Annotation</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Vetted native-speaker annotators complete initial labeling tasks using
+              standardized guidelines, custom tooling, and client-defined taxonomies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector (decorative, desktop only) -->
+      <div class="hidden md:block absolute top-8 left-[33%] w-[33%] z-0">
+        <div class="h-0.5 w-full" style="background:linear-gradient(90deg,#3B4FC8,#1A56DB);"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full"
+             style="background:#1A56DB;"></div>
+      </div>
+      <div class="hidden md:block absolute top-8 left-[66%] w-[33%] z-0" style="left:calc(66% - 16px);">
+        <div class="h-0.5 w-full" style="background:linear-gradient(90deg,#1A56DB,#0ea5e9);"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full"
+             style="background:#0ea5e9;"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative text-center reveal" style="transition-delay:0.15s">
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xl mb-6 shadow-lg relative z-10"
+               style="background:linear-gradient(135deg,#1A56DB,#0284c7);">
+            2
+          </div>
+          <div class="w-px h-8 md:hidden" style="background:linear-gradient(180deg,#1A56DB,transparent);"></div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 w-full">
+            <div class="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Tier 2: Expert QA Review</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Senior reviewers with domain expertise cross-validate annotations,
+              flagging discrepancies and ensuring guideline adherence with
+              automated inter-annotator agreement scoring.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative text-center reveal" style="transition-delay:0.3s">
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center text-white font-black text-xl mb-6 shadow-lg relative z-10"
+               style="background:linear-gradient(135deg,#0284c7,#0ea5e9);">
+            3
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 w-full">
+            <div class="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+              <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Tier 3: Final Accuracy Audit</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              A dedicated QA Lead conducts a final blind audit on randomized samples,
+              verifying accuracy benchmarks before secure dataset delivery to the client.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QA Guarantee Banner -->
+    <div class="mt-16 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 reveal"
+         style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a); border:1px solid rgba(255,255,255,0.1);">
+      <div>
+        <h4 class="text-white text-xl font-bold mb-2">Our Quality Guarantee</h4>
+        <p class="text-blue-200 text-sm leading-relaxed max-w-xl">
+          If any delivered batch falls below the agreed accuracy threshold,
+          we re-annotate at no additional cost. No questions asked.
+        </p>
+      </div>
+      <a href="mailto:ops@xtecq.com"
+         class="flex-shrink-0 btn-primary text-white font-bold px-8 py-3 rounded-xl text-sm whitespace-nowrap inline-flex items-center gap-2">
+        Request a Sample
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           THE SEA ADVANTAGE          ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section id="advantage" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Copy -->
+      <div class="reveal">
+        <span class="section-pill">The SEA Advantage</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy mt-4 mb-6 leading-tight">
+          Built for the Complexity<br/>
+          of <span class="text-brand-indigo">Southeast Asian</span><br/>
+          Languages
+        </h2>
+        <p class="text-slate-500 leading-relaxed mb-8">
+          Southeast Asia is one of the world's most linguistically complex regions.
+          Generic annotation vendors fail here. Xtecq doesn't — because we're
+          <span class="font-semibold text-slate-700">from here</span>.
+          Our annotators are native speakers who understand code-switching,
+          regional slang, cultural sensitivities, and contextual nuances
+          that machines and outsiders miss entirely.
+        </p>
+
+        <!-- Language Badges -->
+        <div class="flex flex-wrap gap-3 mb-8">
+          <div class="lang-badge">
+            <span class="text-lg">🇬🇧</span> English (SEA Variant)
+          </div>
+          <div class="lang-badge">
+            <span class="text-lg">🇲🇾</span> Bahasa Melayu
+          </div>
+          <div class="lang-badge">
+            <span class="text-lg">🇨🇳</span> Mandarin (Simplified)
+          </div>
+          <div class="lang-badge">
+            <span class="text-lg">🗣️</span> Cantonese
+          </div>
+        </div>
+
+        <!-- Feature List -->
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
+              <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 mb-1">Culturally Aware Annotators</h4>
+              <p class="text-slate-500 text-sm">Native speakers who grasp idiom, sentiment, and cultural context — not just literal translation.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389 21.034 21.034 0 01-.554-.6 19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-3.754 1 1 0 111.94-.485c.23.913.558 1.794.977 2.6A17.235 17.235 0 007.39 6H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.992a.869.869 0 01.02.038l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.992A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 mb-1">Code-Switching Expertise</h4>
+              <p class="text-slate-500 text-sm">Proficient in Manglish, Singlish, and hybrid dialect patterns that define real-world SEA communication.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
+                 style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-800 mb-1">Malaysia-Based Operations</h4>
+              <p class="text-slate-500 text-sm">Headquartered in Kuala Lumpur — the geographic and business hub of Southeast Asia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Language Cards Visual -->
+      <div class="reveal grid grid-cols-2 gap-4" style="transition-delay:0.2s">
+        <div class="rounded-2xl p-6 col-span-2" style="background:linear-gradient(135deg,#0B1F3A,#1e3a8a);">
+          <p class="text-white/50 text-xs font-semibold uppercase tracking-widest mb-3">Sample Multilingual Task</p>
+          <p class="text-white font-medium text-sm leading-relaxed mb-4">
+            "Rate the following AI response for helpfulness, harmlessness, and cultural appropriateness in the context of Malaysian Malay-speaking users."
+          </p>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 text-xs font-semibold text-blue-300 rounded-full"
+                  style="background:rgba(59,130,246,0.2);">RLHF</span>
+            <span class="px-3 py-1 text-xs font-semibold text-purple-300 rounded-full"
+                  style="background:rgba(139,92,246,0.2);">Preference Rank</span>
+            <span class="px-3 py-1 text-xs font-semibold text-emerald-300 rounded-full"
+                  style="background:rgba(16,185,129,0.2);">Malay</span>
+          </div>
+        </div>
+
+        <div class="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm">
+          <div class="text-3xl mb-3">🇲🇾</div>
+          <h4 class="font-bold text-brand-navy mb-1">Bahasa Melayu</h4>
+          <p class="text-slate-500 text-xs">Formal, informal & regional variants</p>
+          <div class="mt-4 h-1 rounded-full bg-slate-100">
+            <div class="h-1 rounded-full w-[96%]" style="background:#8B5CF6;"></div>
+          </div>
+          <p class="text-slate-400 text-xs mt-1">96% dialect coverage</p>
+        </div>
+
+        <div class="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm">
+          <div class="text-3xl mb-3">🇨🇳</div>
+          <h4 class="font-bold text-brand-navy mb-1">Mandarin</h4>
+          <p class="text-slate-500 text-xs">Simplified script + SEA context</p>
+          <div class="mt-4 h-1 rounded-full bg-slate-100">
+            <div class="h-1 rounded-full w-[93%]" style="background:#06B6D4;"></div>
+          </div>
+          <p class="text-slate-400 text-xs mt-1">93% regional coverage</p>
+        </div>
+
+        <div class="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm">
+          <div class="text-3xl mb-3">🗣️</div>
+          <h4 class="font-bold text-brand-navy mb-1">Cantonese</h4>
+          <p class="text-slate-500 text-xs">Malaysian-Chinese dialect focus</p>
+          <div class="mt-4 h-1 rounded-full bg-slate-100">
+            <div class="h-1 rounded-full w-[90%]" style="background:#F59E0B;"></div>
+          </div>
+          <p class="text-slate-400 text-xs mt-1">90% accent coverage</p>
+        </div>
+
+        <div class="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm">
+          <div class="text-3xl mb-3">🇬🇧</div>
+          <h4 class="font-bold text-brand-navy mb-1">English (SEA)</h4>
+          <p class="text-slate-500 text-xs">Manglish, Singlish & formal EN</p>
+          <div class="mt-4 h-1 rounded-full bg-slate-100">
+            <div class="h-1 rounded-full w-[99%]" style="background:#3B82F6;"></div>
+          </div>
+          <p class="text-slate-400 text-xs mt-1">99% variant coverage</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           TRUST METRICS              ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section id="metrics" class="py-24 lg:py-32" style="background:linear-gradient(135deg,#0B1F3A 0%,#1e3a8a 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-blue-300 mb-4"
+            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);">
+        By the Numbers
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4">
+        Results You Can Measure
+      </h2>
+      <p class="text-blue-200 text-lg max-w-xl mx-auto">
+        Our metrics aren't marketing — they're contractually committed SLAs
+        we hold ourselves to on every project.
+      </p>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="rounded-2xl p-8 text-center reveal"
+           style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); backdrop-filter:blur(12px);">
+        <div class="text-5xl font-black text-white mb-2" data-target="99" data-suffix="%+">
+          <span class="counter-val">99</span>%+
+        </div>
+        <h4 class="text-blue-200 font-semibold text-sm mb-2">Annotation Accuracy</h4>
+        <p class="text-blue-300/70 text-xs">Across all project types and languages</p>
+      </div>
+
+      <div class="rounded-2xl p-8 text-center reveal" style="transition-delay:0.1s;background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); backdrop-filter:blur(12px);">
+        <div class="text-5xl font-black text-white mb-2">
+          50<span class="text-blue-400">+</span>
+        </div>
+        <h4 class="text-blue-200 font-semibold text-sm mb-2">Vetted Annotators</h4>
+        <p class="text-blue-300/70 text-xs">Native speakers, domain-tested & certified</p>
+      </div>
+
+      <div class="rounded-2xl p-8 text-center reveal" style="transition-delay:0.2s;background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); backdrop-filter:blur(12px);">
+        <div class="text-5xl font-black text-white mb-2">
+          24/7
+        </div>
+        <h4 class="text-blue-200 font-semibold text-sm mb-2">Delivery Availability</h4>
+        <p class="text-blue-300/70 text-xs">Round-the-clock operations & SLA guarantee</p>
+      </div>
+
+      <div class="rounded-2xl p-8 text-center reveal" style="transition-delay:0.3s;background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); backdrop-filter:blur(12px);">
+        <div class="text-5xl font-black text-white mb-2">
+          4
+        </div>
+        <h4 class="text-blue-200 font-semibold text-sm mb-2">Languages Covered</h4>
+        <p class="text-blue-300/70 text-xs">EN · BM · Mandarin · Cantonese</p>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16 reveal">
+      <p class="text-blue-200 mb-6 text-lg">
+        Ready to build AI that truly understands Southeast Asia?
+      </p>
+      <a href="mailto:ops@xtecq.com"
+         class="inline-flex items-center gap-2 btn-primary text-white font-bold px-10 py-4 rounded-xl text-base">
+        Start Your Project
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║           CONTACT STRIP              ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="py-16 bg-white border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+
+      <div class="flex flex-col items-center gap-3 reveal">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+             style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE);">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-1">Email Us</p>
+          <a href="mailto:ops@xtecq.com" class="text-brand-indigo font-bold hover:underline">ops@xtecq.com</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-3 reveal" style="transition-delay:0.1s">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+             style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-1">Location</p>
+          <p class="text-brand-navy font-bold">Kuala Lumpur, Malaysia</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-3 reveal" style="transition-delay:0.2s">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+             style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0);">
+          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-1">Availability</p>
+          <p class="text-brand-navy font-bold">24 / 7 — GMT+8</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║               FOOTER                 ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<footer style="background:#0B1F3A;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-3 gap-12 pb-12"
+         style="border-bottom:1px solid rgba(255,255,255,0.08);">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 rounded-lg flex items-center justify-center"
+               style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);">
+            <span class="text-white font-black text-lg">X</span>
+          </div>
+          <span class="text-xl font-black text-white tracking-tight">
+            Xtecq<span class="text-blue-400">.</span>
+          </span>
+        </div>
+        <p class="text-blue-200/70 text-sm leading-relaxed mb-4">
+          Southeast Asia's premier AI data solutions partner — delivering
+          high-precision multilingual annotation, RLHF, and localized data
+          collection at scale.
+        </p>
+        <p class="text-blue-300/50 text-xs">
+          A premier AI data brand under<br/>
+          <span class="text-blue-300/80 font-semibold">West Corporate Sdn Bhd</span>
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h5 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h5>
+        <ul class="space-y-3">
+          <li><a href="#services"  class="text-blue-200/70 text-sm hover:text-white transition">Services</a></li>
+          <li><a href="#process"   class="text-blue-200/70 text-sm hover:text-white transition">Our QA Process</a></li>
+          <li><a href="#advantage" class="text-blue-200/70 text-sm hover:text-white transition">SEA Advantage</a></li>
+          <li><a href="#metrics"   class="text-blue-200/70 text-sm hover:text-white transition">Results & Metrics</a></li>
+          <li><a href="mailto:ops@xtecq.com" class="text-blue-200/70 text-sm hover:text-white transition">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h5 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Our Services</h5>
+        <ul class="space-y-3">
+          <li class="text-blue-200/70 text-sm">Multilingual RLHF & LLM Tuning</li>
+          <li class="text-blue-200/70 text-sm">Computer Vision Annotation</li>
+          <li class="text-blue-200/70 text-sm">Localized Data Collection</li>
+          <li class="text-blue-200/70 text-sm">3-Tier QA Assurance</li>
+          <li class="text-blue-200/70 text-sm">SEA Multilingual Datasets</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-blue-300/50 text-xs text-center md:text-left">
+        © 2024 Xtecq. A premier AI data brand under West Corporate Sdn Bhd. All rights reserved.
+      </p>
+      <div class="flex items-center gap-1 text-blue-300/50 text-xs">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+        </svg>
+        Kuala Lumpur, Malaysia
+        <span class="mx-2">·</span>
+        <a href="mailto:ops@xtecq.com" class="hover:text-blue-300 transition">ops@xtecq.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║         SCROLL-TO-TOP BUTTON         ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<button id="scroll-top"
+        class="fixed bottom-8 right-8 w-12 h-12 rounded-full text-white shadow-lg z-50 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none"
+        style="background:linear-gradient(135deg,#3B4FC8,#1A56DB);"
+        aria-label="Back to top">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+  </svg>
+</button>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║              JAVASCRIPT              ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<script>
+  /* ── Sticky nav shadow ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('nav-scrolled');
+    } else {
+      navbar.classList.remove('nav-scrolled');
+    }
+  });
+
+  /* ── Mobile hamburger ── */
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobile-menu');
+  const iconOpen    = document.getElementById('icon-open');
+  const iconClose   = document.getElementById('icon-close');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+
+  /* Close mobile menu on link click */
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  /* ── Scroll Reveal (Intersection Observer) ── */
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  /* ── Scroll-to-top button ── */
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.style.opacity = '1';
+      scrollTopBtn.style.pointerEvents = 'auto';
+    } else {
+      scrollTopBtn.style.opacity = '0';
+      scrollTopBtn.style.pointerEvents = 'none';
+    }
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── Service card relative positioning fix ── */
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.style.position = 'relative';
+  });
+</script>
+
 </body>
 </html>
