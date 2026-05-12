@@ -33,13 +33,12 @@
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
             brand: {
-              blue:    '#2979FF',
-              bluedark:'#1565C0',
-              bluesoft:'#448AFF',
-              light:   '#E3F0FF',
-              navy:    '#0A1628',
-              slate:   '#64748B',
-              dark:    '#0D1B2E',
+              blue:     '#2176FF',
+              bluedark: '#1450CC',
+              bluesoft: '#5599FF',
+              light:    '#E8F0FF',
+              navy:     '#0A1628',
+              dark:     '#040D1E',
             }
           }
         }
@@ -49,72 +48,74 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #F7FAFF; color: #0D1B2E; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background: #F5F8FF; color: #0A1628; overflow-x: hidden; }
 
     /* ── HERO ── */
     .hero-bg {
-      background: linear-gradient(135deg, #020818 0%, #061535 30%, #0a2060 60%, #0d2d80 100%);
+      background: linear-gradient(135deg, #020C1E 0%, #051230 35%, #092060 65%, #0C2880 100%);
       position: relative; overflow: hidden; min-height: 100vh;
     }
     #particle-canvas { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
     .grid-dots {
       position:absolute; inset:0;
-      background-image: radial-gradient(circle, rgba(41,121,255,0.08) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(33,118,255,0.07) 1px, transparent 1px);
       background-size: 36px 36px; pointer-events:none; z-index:0;
     }
-    .glow-orb { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; animation:orb-float 10s ease-in-out infinite; }
-    .orb-1 { width:500px; height:500px; background:rgba(41,121,255,0.18); top:-120px; right:-100px; animation-delay:0s; }
-    .orb-2 { width:320px; height:320px; background:rgba(68,138,255,0.12); bottom:-60px; left:8%;  animation-delay:4s; }
-    .orb-3 { width:200px; height:200px; background:rgba(41,121,255,0.1);  top:45%;   left:45%; animation-delay:7s; }
-    @keyframes orb-float { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-28px) scale(1.04);} }
+    .glow-orb { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; animation:orb-float 10s ease-in-out infinite; }
+    .orb-1 { width:520px; height:520px; background:rgba(33,118,255,0.2);  top:-130px; right:-100px; animation-delay:0s; }
+    .orb-2 { width:340px; height:340px; background:rgba(85,153,255,0.14); bottom:-70px; left:5%;   animation-delay:4s; }
+    .orb-3 { width:220px; height:220px; background:rgba(33,118,255,0.1);  top:42%;    left:42%;   animation-delay:7s; }
+    @keyframes orb-float { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-26px) scale(1.04);} }
 
     /* ── TYPOGRAPHY ── */
     .gradient-text {
-      background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 50%, #BFDBFE 100%);
+      background: linear-gradient(135deg, #93C5FD 0%, #60A5FA 50%, #BFDBFE 100%);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
     .gradient-text-accent {
-      background: linear-gradient(135deg, #2979FF 0%, #448AFF 100%);
+      background: linear-gradient(135deg, #2176FF 0%, #5599FF 100%);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
 
     /* ── BUTTONS ── */
     .btn-primary {
-      background: linear-gradient(135deg, #2979FF 0%, #1565C0 100%);
-      box-shadow: 0 4px 20px rgba(41,121,255,0.4);
+      background: linear-gradient(135deg, #2176FF 0%, #1450CC 100%);
+      box-shadow: 0 4px 20px rgba(33,118,255,0.4);
       transition: transform 0.2s, box-shadow 0.2s; position:relative; overflow:hidden;
     }
     .btn-primary::after {
       content:''; position:absolute; inset:0;
-      background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent);
+      background:linear-gradient(135deg,rgba(255,255,255,0.14),transparent);
       opacity:0; transition:opacity 0.2s;
     }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(41,121,255,0.5); }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(33,118,255,0.55); }
     .btn-primary:hover::after { opacity:1; }
     .btn-ghost { border:1.5px solid rgba(255,255,255,0.22); transition:all 0.2s; backdrop-filter:blur(4px); }
     .btn-ghost:hover { border-color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.07); }
 
-    /* ── CARDS ── */
+    /* ── SERVICE CARDS ── */
     .service-card {
-      border:1px solid #E0ECFF; position:relative; overflow:hidden;
+      border:1px solid #DDEAFF; position:relative; overflow:hidden;
       transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s, border-color 0.3s;
     }
     .service-card::before {
       content:''; position:absolute; top:0; left:0; right:0; height:3px;
-      background:linear-gradient(90deg,#2979FF,#448AFF,#93C5FD);
+      background:linear-gradient(90deg,#2176FF,#5599FF,#93C5FD);
       transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease;
     }
-    .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(41,121,255,0.14); border-color:#93C5FD; }
+    .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(33,118,255,0.13); border-color:#93C5FD; }
     .service-card:hover::before { transform:scaleX(1); }
 
     .glass-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(18px); }
+    .metric-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px); transition:transform 0.3s, box-shadow 0.3s; }
+    .metric-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
 
     /* ── PILLS ── */
     .section-pill {
       display:inline-block; padding:5px 16px;
-      background:rgba(41,121,255,0.1); color:#2979FF;
+      background:rgba(33,118,255,0.09); color:#2176FF;
       border-radius:50px; font-size:0.7rem; font-weight:700;
-      letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(41,121,255,0.2);
+      letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(33,118,255,0.2);
     }
     .section-pill-dark {
       display:inline-block; padding:5px 16px;
@@ -127,14 +128,14 @@
     .lang-badge {
       display:inline-flex; align-items:center; gap:8px;
       padding:9px 18px; border-radius:50px;
-      background:rgba(41,121,255,0.07); border:1px solid rgba(41,121,255,0.2);
-      font-weight:600; color:#1565C0;
+      background:rgba(33,118,255,0.07); border:1px solid rgba(33,118,255,0.2);
+      font-weight:600; color:#1450CC;
       transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1); cursor:default;
     }
     .lang-badge:hover {
-      background:linear-gradient(135deg,#2979FF,#1565C0);
+      background:linear-gradient(135deg,#2176FF,#1450CC);
       color:#fff; border-color:transparent; transform:translateY(-2px);
-      box-shadow:0 6px 20px rgba(41,121,255,0.35);
+      box-shadow:0 6px 20px rgba(33,118,255,0.35);
     }
 
     /* ── PROCESS ── */
@@ -153,11 +154,11 @@
       width:54px; height:54px; background:#25D366; border-radius:50%;
       display:flex; align-items:center; justify-content:center; cursor:pointer;
       box-shadow:0 4px 18px rgba(37,211,102,0.4);
-      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
       animation:wa-pulse 3.5s ease-in-out infinite;
     }
     #wa-bubble:hover { transform:scale(1.1); }
-    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.4);} 50%{box-shadow:0 4px 28px rgba(37,211,102,0.65), 0 0 0 7px rgba(37,211,102,0.08);} }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.4);} 50%{box-shadow:0 4px 28px rgba(37,211,102,0.65),0 0 0 7px rgba(37,211,102,0.08);} }
     #wa-panel {
       position:absolute; bottom:66px; left:0; width:290px;
       background:#fff; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.16); overflow:hidden;
@@ -182,9 +183,9 @@
     #scroll-top {
       position:fixed; bottom:28px; right:28px; z-index:200;
       width:46px; height:46px;
-      background:linear-gradient(135deg,#2979FF,#1565C0);
+      background:linear-gradient(135deg,#2176FF,#1450CC);
       border-radius:50%; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; box-shadow:0 4px 18px rgba(41,121,255,0.4);
+      cursor:pointer; box-shadow:0 4px 18px rgba(33,118,255,0.4);
       opacity:0; pointer-events:none; transition:all 0.3s ease; border:none;
     }
     #scroll-top.visible { opacity:1; pointer-events:auto; }
@@ -195,9 +196,9 @@
       width:100%; padding:11px 15px; border:1.5px solid #DBEAFE; border-radius:10px;
       font-size:0.875rem; outline:none;
       transition:border-color 0.2s, box-shadow 0.2s;
-      background:#fff; font-family:'Inter',sans-serif; color:#0D1B2E;
+      background:#fff; font-family:'Inter',sans-serif; color:#0A1628;
     }
-    .form-input:focus { border-color:#2979FF; box-shadow:0 0 0 4px rgba(41,121,255,0.1); }
+    .form-input:focus { border-color:#2176FF; box-shadow:0 0 0 4px rgba(33,118,255,0.1); }
     .form-select {
       appearance:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
@@ -208,39 +209,16 @@
     .progress-bar { width:0; transition:width 1.2s cubic-bezier(0.4,0,0.2,1); }
 
     /* ── COMPARE TABLE ── */
-    .compare-row:nth-child(odd)  { background:#F7FAFF; }
+    .compare-row:nth-child(odd)  { background:#F5F8FF; }
     .compare-row:nth-child(even) { background:#fff; }
-    .compare-row:hover           { background:#EFF6FF; transition:background 0.2s; }
-
-    /* ── METRIC CARD ── */
-    .metric-card {
-      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
-      backdrop-filter:blur(12px); transition:transform 0.3s, box-shadow 0.3s;
-    }
-    .metric-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
+    .compare-row:hover           { background:#EBF2FF; transition:background 0.2s; }
 
     ::-webkit-scrollbar { width:5px; }
-    ::-webkit-scrollbar-track { background:#EFF6FF; }
-    ::-webkit-scrollbar-thumb { background:#2979FF; border-radius:3px; }
-
-    /* ── XTECQ LOGO SVG ── */
-    .xtecq-logo-mark {
-      /* The organic rounded X with circle — cobalt blue */
-      filter: drop-shadow(0 2px 4px rgba(41,121,255,0.3));
-    }
-    /* Footer logo: white tint */
-    .xtecq-logo-mark-white {
-      filter: brightness(10) saturate(0) drop-shadow(0 1px 3px rgba(0,0,0,0.3));
-    }
+    ::-webkit-scrollbar-track { background:#EBF2FF; }
+    ::-webkit-scrollbar-thumb { background:#2176FF; border-radius:3px; }
   </style>
 </head>
 <body class="antialiased">
-
-<!-- ████████████████████████████████████████
-     REUSABLE LOGO SVG (inline, faithful to the blue rounded-X mark)
-     The logo is an organic X shape with 4 rounded arms and a hollow circle
-     on the upper-right arm tip — all in cobalt blue #2979FF
-█████████████████████████████████████████ -->
 
 <!-- ████████████████████████████████████████
      NAVIGATION
@@ -249,49 +227,110 @@
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
 
-      <!-- LOGO: Faithful blue organic X with circle hole -->
+      <!-- ✅ LOGO: Faithful recreation of the blue organic rounded-X with hole -->
       <a href="#" class="flex items-center gap-3" aria-label="Xtecq Home">
-        <svg class="xtecq-logo-mark" width="38" height="38" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!--
+          The Xtecq logo is:
+          - An organic rounded cross/X shape — like 4 fat rounded arms meeting at the center
+          - Slightly tilted (the upper-left arm goes up-left, upper-right goes up-right)
+          - The upper-right arm has a CIRCULAR HOLE punched through the middle of the arm
+          - Bright cobalt blue with a 3D glossy gradient (lighter top-left, darker bottom-right)
+          - Very smooth, no sharp corners — like inflated rounded shapes
+        -->
+        <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient id="logoGradNav" x1="30" y1="20" x2="170" y2="180" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stop-color="#42A5F5"/>
-              <stop offset="50%"  stop-color="#2979FF"/>
-              <stop offset="100%" stop-color="#1565C0"/>
+            <!-- Main body gradient: light top-left to dark bottom-right (3D gloss effect) -->
+            <linearGradient id="lgNav1" x1="20" y1="15" x2="100" y2="105" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#5DB8FF"/>
+              <stop offset="35%"  stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#1040B0"/>
             </linearGradient>
+            <!-- Specular highlight -->
+            <linearGradient id="lgNav2" x1="25" y1="20" x2="60" y2="55" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.45)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+            <clipPath id="clipNav">
+              <path d="
+                M 42 8
+                C 36 2, 24 2, 19 10
+                C 14 18, 17 29, 25 36
+                L 44 54
+                L 14 72
+                C 5 79, 4 92, 12 98
+                C 20 104, 33 101, 39 93
+                L 57 74
+                L 75 94
+                C 81 102, 94 105, 101 99
+                C 108 93, 107 80, 99 73
+                L 76 55
+                L 95 37
+                C 103 30, 106 18, 100 11
+                C 94 4, 82 3, 75 10
+                L 58 28
+                L 42 8
+                Z
+              "/>
+            </clipPath>
           </defs>
-          <!--
-            Organic rounded X shape: 4 arms meeting at centre,
-            each arm tip is fully rounded (large border-radius feel).
-            Upper-right arm has a circular cutout (the "o" detail).
-            Slightly tilted ~10deg like the real logo.
-          -->
+
+          <!-- Main body -->
           <path d="
-            M 72 18
-            C 72 18, 62 8, 48 14
-            C 34 20, 30 36, 38 50
-            L 78 100
-            L 30 148
-            C 18 162, 24 180, 40 186
-            C 56 192, 68 182, 76 168
-            L 100 130
-            L 124 168
-            C 132 182, 146 192, 162 186
-            C 178 180, 182 162, 170 148
-            L 122 100
-            L 158 54
-            C 168 40, 166 22, 152 16
-            C 138 10, 124 18, 116 32
-            L 100 62
-            L 84 34
-            C 80 26, 76 20, 72 18
+            M 42 8
+            C 36 2, 24 2, 19 10
+            C 14 18, 17 29, 25 36
+            L 44 54
+            L 14 72
+            C 5 79, 4 92, 12 98
+            C 20 104, 33 101, 39 93
+            L 57 74
+            L 75 94
+            C 81 102, 94 105, 101 99
+            C 108 93, 107 80, 99 73
+            L 76 55
+            L 95 37
+            C 103 30, 106 18, 100 11
+            C 94 4, 82 3, 75 10
+            L 58 28
+            L 42 8
             Z
-          " fill="url(#logoGradNav)"/>
-          <!-- Circle hole on upper-right arm -->
-          <circle cx="148" cy="36" r="14" fill="white"/>
-          <circle cx="148" cy="36" r="9"  fill="url(#logoGradNav)"/>
+          " fill="url(#lgNav1)"/>
+
+          <!-- Gloss highlight layer -->
+          <path d="
+            M 42 8
+            C 36 2, 24 2, 19 10
+            C 14 18, 17 29, 25 36
+            L 44 54
+            L 14 72
+            C 5 79, 4 92, 12 98
+            C 20 104, 33 101, 39 93
+            L 57 74
+            L 75 94
+            C 81 102, 94 105, 101 99
+            C 108 93, 107 80, 99 73
+            L 76 55
+            L 95 37
+            C 103 30, 106 18, 100 11
+            C 94 4, 82 3, 75 10
+            L 58 28
+            L 42 8
+            Z
+          " fill="url(#lgNav2)" opacity="0.5"/>
+
+          <!--
+            Circular HOLE on the upper-right arm
+            Looking at the logo: the upper-right arm extends to the upper-right
+            The hole is roughly in the middle of that arm, close to the tip
+            The arm tip is around x=88, y=22 area
+          -->
+          <circle cx="85" cy="26" r="9" fill="white"/>
+          <!-- Inner circle to show depth (same gradient, smaller) -->
+          <circle cx="85" cy="26" r="5.5" fill="url(#lgNav1)"/>
         </svg>
+
         <div class="flex flex-col leading-none">
-          <span class="text-xl font-black tracking-tight" style="color:#0D1B2E;">Xtecq<span style="color:#2979FF;">.</span></span>
+          <span class="text-xl font-black tracking-tight" style="color:#0A1628;">Xtecq<span style="color:#2176FF;">.</span></span>
           <span class="text-[9px] font-semibold text-slate-400 tracking-widest uppercase">AI Data Solutions</span>
         </div>
       </a>
@@ -345,10 +384,10 @@
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 w-full">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Left -->
+      <!-- Left copy -->
       <div class="text-white">
         <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
-             style="background:rgba(41,121,255,0.15);border:1px solid rgba(41,121,255,0.3);">
+             style="background:rgba(33,118,255,0.15);border:1px solid rgba(33,118,255,0.3);">
           <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
           <span class="text-xs font-bold tracking-widest uppercase text-blue-300">Southeast Asia AI Data Partner</span>
         </div>
@@ -375,22 +414,22 @@
           </a>
         </div>
 
-        <!-- Honest trust signals -->
+        <!-- Honest signals -->
         <div class="flex flex-wrap gap-6 pt-8" style="border-top:1px solid rgba(255,255,255,0.1);">
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(41,121,255,0.2);">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(33,118,255,0.2);">
               <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </div>
             <span class="text-blue-200 text-sm font-medium">Native SEA Annotators</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(41,121,255,0.2);">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(33,118,255,0.2);">
               <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </div>
             <span class="text-blue-200 text-sm font-medium">3-Tier QA Process</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(41,121,255,0.2);">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(33,118,255,0.2);">
               <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
             </div>
             <span class="text-blue-200 text-sm font-medium">Pilot Before You Commit</span>
@@ -398,11 +437,11 @@
         </div>
       </div>
 
-      <!-- Right: Dashboard mockup -->
+      <!-- Right: dashboard -->
       <div class="hidden lg:block">
         <div class="glass-card rounded-2xl overflow-hidden">
           <div class="px-6 py-4 flex items-center justify-between"
-               style="background:rgba(41,121,255,0.06);border-bottom:1px solid rgba(255,255,255,0.07);">
+               style="background:rgba(33,118,255,0.06);border-bottom:1px solid rgba(255,255,255,0.07);">
             <div class="flex items-center gap-3">
               <div class="flex gap-1.5">
                 <div class="w-2.5 h-2.5 rounded-full bg-red-400/50"></div>
@@ -416,14 +455,14 @@
           <div class="p-6">
             <p class="text-white/35 text-xs uppercase tracking-widest font-semibold mb-5">What We Handle</p>
             <div class="space-y-3 mb-6">
-              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(41,121,255,0.12);border:1px solid rgba(41,121,255,0.25);">
+              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(33,118,255,0.12);border:1px solid rgba(33,118,255,0.25);">
                 <span class="text-lg">🧠</span>
                 <div>
                   <p class="text-white font-semibold text-sm">RLHF &amp; Preference Ranking</p>
                   <p class="text-white/40 text-xs">EN · BM · Mandarin · Cantonese</p>
                 </div>
               </div>
-              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(68,138,255,0.1);border:1px solid rgba(68,138,255,0.2);">
+              <div class="flex items-center gap-3 p-3 rounded-xl" style="background:rgba(85,153,255,0.1);border:1px solid rgba(85,153,255,0.2);">
                 <span class="text-lg">🔍</span>
                 <div>
                   <p class="text-white font-semibold text-sm">AI Output Evaluation</p>
@@ -438,20 +477,21 @@
                 </div>
               </div>
             </div>
-            <div class="rounded-xl p-4 text-center" style="background:rgba(41,121,255,0.12);border:1px solid rgba(41,121,255,0.25);">
+            <div class="rounded-xl p-4 text-center" style="background:rgba(33,118,255,0.12);border:1px solid rgba(33,118,255,0.25);">
               <p class="text-blue-300 font-bold text-sm mb-1">🚀 Free Pilot Available</p>
               <p class="text-white/40 text-xs">Start small. Verify quality. Scale when ready.</p>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- ████████████████████████████████████████
-     WHY SEA IS DIFFERENT
+     WHY SEA
 █████████████████████████████████████████ -->
 <section class="py-20 lg:py-28 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -462,9 +502,9 @@
         <span class="gradient-text-accent">Unlike Anywhere Else</span>
       </h2>
       <p class="text-lg text-slate-500 leading-relaxed mb-12">
-        With 680+ million people across dozens of languages and dialects, SEA requires
-        annotation teams who genuinely understand the region — not vendors who treat
-        Malay as a simple translation exercise.
+        With 680+ million people across dozens of languages and dialects, SEA requires annotation
+        teams who genuinely understand the region — not vendors who treat Malay as a simple
+        translation exercise.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -480,7 +520,7 @@
           <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
         </div>
         <h3 class="font-bold text-slate-800 mb-2">Code-Switching Reality</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Malaysians naturally mix Malay, English, Mandarin, and Cantonese mid-sentence. This requires annotators who live it — not just study it.</p>
+        <p class="text-slate-500 text-sm leading-relaxed">Malaysians naturally mix Malay, English, Mandarin, and Cantonese mid-sentence. Our team annotates this the way real users experience it.</p>
       </div>
       <div class="bg-white rounded-2xl p-6 border border-blue-100 shadow-sm text-center">
         <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
@@ -490,7 +530,7 @@
         <p class="text-slate-500 text-sm leading-relaxed">Malaysian Mandarin and Cantonese carry distinct regional character. Standard Chinese annotation misses this entirely.</p>
       </div>
     </div>
-    <p class="text-center mt-10 font-bold text-lg reveal" style="color:#2979FF;">Xtecq is built in Malaysia, for the SEA market. →</p>
+    <p class="text-center mt-10 font-bold text-lg reveal" style="color:#2176FF;">Xtecq is built in Malaysia, for the SEA market. →</p>
   </div>
 </section>
 
@@ -498,7 +538,7 @@
 <!-- ████████████████████████████████████████
      SERVICES
 █████████████████████████████████████████ -->
-<section id="services" class="py-24 lg:py-32" style="background:#F0F7FF;">
+<section id="services" class="py-24 lg:py-32" style="background:#EEF5FF;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
       <span class="section-pill">Our Services</span>
@@ -512,36 +552,36 @@
         <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
           <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
         </div>
-        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-4 tracking-wide uppercase" style="background:#EFF6FF;color:#1565C0;">RLHF</span>
+        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-4 tracking-wide uppercase" style="background:#EFF6FF;color:#1450CC;">RLHF</span>
         <h3 class="text-xl font-bold text-brand-navy mb-3">Multilingual RLHF &amp; LLM Tuning</h3>
         <p class="text-slate-500 leading-relaxed mb-6 text-sm">Human preference data for reinforcement learning — ranking AI responses, rating output quality, and flagging culturally inappropriate content across SEA languages.</p>
         <ul class="space-y-2.5 mb-8">
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Response preference ranking</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Instruction following datasets</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Harmful content red-teaming</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural sensitivity checks</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Response preference ranking</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Instruction following datasets</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Harmful content red-teaming</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural sensitivity checks</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-1.5 font-semibold text-sm hover:gap-3 transition-all duration-200" style="color:#2979FF;">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 font-semibold text-sm hover:gap-3 transition-all duration-200" style="color:#2176FF;">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
 
       <!-- AI Evaluation -->
       <div class="service-card bg-white rounded-2xl p-8 reveal" style="transition-delay:0.1s;position:relative;">
         <div class="absolute top-0 right-6 -translate-y-1/2">
-          <span class="inline-block px-4 py-1.5 text-xs font-bold text-white rounded-full" style="background:linear-gradient(135deg,#2979FF,#1565C0);box-shadow:0 4px 12px rgba(41,121,255,0.4);">Core Offering</span>
+          <span class="inline-block px-4 py-1.5 text-xs font-bold text-white rounded-full" style="background:linear-gradient(135deg,#2176FF,#1450CC);box-shadow:0 4px 12px rgba(33,118,255,0.4);">Core Offering</span>
         </div>
         <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
           <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
         </div>
-        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-4 tracking-wide uppercase" style="background:#EFF6FF;color:#1565C0;">AI Evaluation</span>
+        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-4 tracking-wide uppercase" style="background:#EFF6FF;color:#1450CC;">AI Evaluation</span>
         <h3 class="text-xl font-bold text-brand-navy mb-3">AI Output Evaluation</h3>
         <p class="text-slate-500 leading-relaxed mb-6 text-sm">Human evaluation of AI-generated content for accuracy, tone, helpfulness, and cultural appropriateness — in the languages your users actually speak.</p>
         <ul class="space-y-2.5 mb-8">
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Fluency &amp; coherence scoring</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Factual accuracy review</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural appropriateness checks</li>
-          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2979FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Bias &amp; safety flagging</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Fluency &amp; coherence scoring</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Factual accuracy review</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cultural appropriateness checks</li>
+          <li class="flex items-center gap-2 text-sm text-slate-600"><svg class="w-4 h-4 flex-shrink-0" style="color:#2176FF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Bias &amp; safety flagging</li>
         </ul>
-        <a href="#contact" class="inline-flex items-center gap-1.5 font-semibold text-sm hover:gap-3 transition-all duration-200" style="color:#2979FF;">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 font-semibold text-sm hover:gap-3 transition-all duration-200" style="color:#2176FF;">Discuss this service <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
 
       <!-- Annotation -->
@@ -578,10 +618,10 @@
 
     <div class="relative mb-20">
       <div class="hidden lg:block absolute top-10 left-[12%] right-[12%] h-0.5 z-0"
-           style="background:linear-gradient(90deg,#2979FF,#448AFF,#60A5FA,#10B981);"></div>
+           style="background:linear-gradient(90deg,#2176FF,#5599FF,#93C5FD,#10B981);"></div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         <div class="process-step text-center reveal">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#2979FF,#1565C0);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#2176FF,#1450CC);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">1</span>
           </div>
@@ -589,7 +629,7 @@
           <p class="text-slate-500 text-xs leading-relaxed">Share your project scope, target languages, and quality expectations. No commitment needed.</p>
         </div>
         <div class="process-step text-center reveal" style="transition-delay:0.1s;">
-          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#1E88E5,#1565C0);">
+          <div class="w-20 h-20 rounded-2xl mx-auto mb-4 flex flex-col items-center justify-center shadow-md" style="background:linear-gradient(135deg,#1E88E5,#1450CC);">
             <span class="text-white/60 text-xs font-bold">STEP</span>
             <span class="text-white font-black text-2xl leading-none">2</span>
           </div>
@@ -626,7 +666,7 @@
           <div class="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
             <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
           </div>
-          <div class="font-black text-3xl mb-2" style="color:#2979FF;">T1</div>
+          <div class="font-black text-3xl mb-2" style="color:#2176FF;">T1</div>
           <h4 class="font-bold text-brand-navy mb-2 text-sm">Primary Annotation</h4>
           <p class="text-slate-500 text-xs leading-relaxed">Native-speaker annotators complete initial tasks following your custom guidelines.</p>
         </div>
@@ -634,7 +674,7 @@
           <div class="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE);">
             <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
           </div>
-          <div class="font-black text-3xl mb-2" style="color:#1565C0;">T2</div>
+          <div class="font-black text-3xl mb-2" style="color:#1450CC;">T2</div>
           <h4 class="font-bold text-brand-navy mb-2 text-sm">Peer QA Review</h4>
           <p class="text-slate-500 text-xs leading-relaxed">A second annotator reviews and validates the work, flagging inconsistencies.</p>
         </div>
@@ -655,7 +695,7 @@
 <!-- ████████████████████████████████████████
      SEA ADVANTAGE
 █████████████████████████████████████████ -->
-<section id="advantage" class="py-24 lg:py-32" style="background:#F0F7FF;">
+<section id="advantage" class="py-24 lg:py-32" style="background:#EEF5FF;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div class="reveal">
@@ -708,12 +748,12 @@
 
       <!-- Language cards -->
       <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay:0.15s;">
-        <div class="col-span-2 rounded-2xl p-6" style="background:linear-gradient(135deg,#0A1628,#0d2d80);">
+        <div class="col-span-2 rounded-2xl p-6" style="background:linear-gradient(135deg,#051230,#092060);">
           <p class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-3">Example RLHF Task</p>
           <p class="text-white font-medium text-sm leading-relaxed mb-4">"Rank these two AI responses for a Malaysian user asking about home loan eligibility. Consider tone, accuracy, and local banking context."</p>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 text-xs font-semibold text-blue-300 rounded-full" style="background:rgba(41,121,255,0.2);">RLHF</span>
-            <span class="px-3 py-1 text-xs font-semibold text-blue-200 rounded-full" style="background:rgba(68,138,255,0.15);">Preference Ranking</span>
+            <span class="px-3 py-1 text-xs font-semibold text-blue-300 rounded-full" style="background:rgba(33,118,255,0.2);">RLHF</span>
+            <span class="px-3 py-1 text-xs font-semibold text-blue-200 rounded-full" style="background:rgba(85,153,255,0.15);">Preference Ranking</span>
             <span class="px-3 py-1 text-xs font-semibold text-emerald-300 rounded-full" style="background:rgba(16,185,129,0.15);">English (MY)</span>
           </div>
         </div>
@@ -721,21 +761,21 @@
           <div class="text-3xl mb-3">🇲🇾</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Bahasa Melayu</h4>
           <p class="text-slate-400 text-xs mb-3">Formal &amp; informal variants</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#2979FF;" data-width="92"></div></div>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#2176FF;" data-width="92"></div></div>
           <p class="text-slate-400 text-xs">Primary language focus</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm">
           <div class="text-3xl mb-3">🇨🇳</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Mandarin</h4>
           <p class="text-slate-400 text-xs mb-3">Malaysian Chinese context</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#42A5F5;" data-width="85"></div></div>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#5599FF;" data-width="85"></div></div>
           <p class="text-slate-400 text-xs">Strong regional coverage</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm">
           <div class="text-3xl mb-3">🗣️</div>
           <h4 class="font-bold text-brand-navy text-sm mb-1">Cantonese</h4>
           <p class="text-slate-400 text-xs mb-3">Malaysian dialect nuances</p>
-          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#90CAF9;" data-width="78"></div></div>
+          <div class="h-1.5 rounded-full bg-slate-100 mb-1"><div class="progress-bar h-1.5 rounded-full" style="background:#93C5FD;" data-width="78"></div></div>
           <p class="text-slate-400 text-xs">Growing capability</p>
         </div>
         <div class="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm">
@@ -752,7 +792,7 @@
 
 
 <!-- ████████████████████████████████████████
-     COMPARISON TABLE
+     COMPARISON
 █████████████████████████████████████████ -->
 <section id="compare" class="py-24 lg:py-32 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -762,15 +802,20 @@
       <p class="text-slate-500 max-w-xl mx-auto">We're a focused, specialist team — not a generic annotation platform. Here's what that means in practice.</p>
     </div>
     <div class="rounded-2xl overflow-hidden border border-blue-100 shadow-sm reveal">
-      <div class="grid grid-cols-3 text-sm font-bold" style="background:linear-gradient(135deg,#0A1628,#0d2d80);">
+      <div class="grid grid-cols-3 font-bold" style="background:linear-gradient(135deg,#051230,#092060);">
         <div class="px-6 py-4 text-white/40 text-xs uppercase tracking-wider">What Matters</div>
         <div class="px-6 py-4 text-center text-white/40 text-xs uppercase tracking-wider">Generic Vendors</div>
         <div class="px-6 py-4 text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-          <!-- Inline mini logo in table header -->
-          <svg width="16" height="16" viewBox="0 0 200 200" fill="none">
-            <defs><linearGradient id="logoGradTbl" x1="30" y1="20" x2="170" y2="180" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#42A5F5"/><stop offset="100%" stop-color="#1565C0"/></linearGradient></defs>
-            <path d="M72 18C72 18,62 8,48 14C34 20,30 36,38 50L78 100L30 148C18 162,24 180,40 186C56 192,68 182,76 168L100 130L124 168C132 182,146 192,162 186C178 180,182 162,170 148L122 100L158 54C168 40,166 22,152 16C138 10,124 18,116 32L100 62L84 34C80 26,76 20,72 18Z" fill="url(#logoGradTbl)"/>
-            <circle cx="148" cy="36" r="14" fill="white"/><circle cx="148" cy="36" r="9" fill="url(#logoGradTbl)"/>
+          <!-- Mini logo in table header -->
+          <svg width="16" height="16" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="lgTbl" x1="20" y1="15" x2="100" y2="105" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#93C5FD"/>
+                <stop offset="100%" stop-color="#1450CC"/>
+              </linearGradient>
+            </defs>
+            <path d="M42 8C36 2,24 2,19 10C14 18,17 29,25 36L44 54L14 72C5 79,4 92,12 98C20 104,33 101,39 93L57 74L75 94C81 102,94 105,101 99C108 93,107 80,99 73L76 55L95 37C103 30,106 18,100 11C94 4,82 3,75 10L58 28L42 8Z" fill="url(#lgTbl)"/>
+            <circle cx="85" cy="26" r="9" fill="#051230"/><circle cx="85" cy="26" r="5.5" fill="url(#lgTbl)"/>
           </svg>
           <span class="text-blue-300">Xtecq</span>
         </div>
@@ -797,7 +842,7 @@
 <!-- ████████████████████████████████████████
      FAQ
 █████████████████████████████████████████ -->
-<section id="faq" class="py-24 lg:py-32" style="background:#F0F7FF;">
+<section id="faq" class="py-24 lg:py-32" style="background:#EEF5FF;">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16 reveal">
       <span class="section-pill">FAQ</span>
@@ -809,7 +854,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">Are you a platform or a services company?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We're a services company. We don't have a self-serve platform — we work directly with clients to understand their project needs and deliver via a managed process. That means more customization, more communication, and more accountability than a generic platform.</p></div>
       </div>
@@ -817,7 +862,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal" style="transition-delay:0.05s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">How big is your annotator team?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We maintain a core team of trained annotators and can scale based on project requirements. We're transparent about our capacity — we'll tell you upfront whether your project volume is something we can handle, and at what timeline. We don't overpromise.</p></div>
       </div>
@@ -825,7 +870,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal" style="transition-delay:0.1s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">What does the free pilot include?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We'll complete a small sample of your actual task — typically 50 to 200 items depending on complexity — at no cost. This gives you real data to evaluate our quality and annotation style before you decide whether to proceed with a full project.</p></div>
       </div>
@@ -833,7 +878,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal" style="transition-delay:0.15s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">How do you handle data privacy and NDAs?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">All annotators sign NDAs before working on any client project. Client data is used solely for the purposes of the contracted task and is not shared, retained, or repurposed. We're happy to sign your NDA before any pilot begins.</p></div>
       </div>
@@ -841,7 +886,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal" style="transition-delay:0.2s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">What file formats do you work with?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We work with most standard formats — JSON, JSONL, CSV, Excel, and can adapt to client tooling. For image and video annotation we support COCO, Pascal VOC, YOLO, and others. Let us know your stack and we'll confirm compatibility.</p></div>
       </div>
@@ -849,7 +894,7 @@
       <div class="faq-item bg-white rounded-2xl border border-blue-100 overflow-hidden reveal" style="transition-delay:0.25s;">
         <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="font-semibold text-brand-navy text-sm pr-4">How long does a typical project take to start?</span>
-          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2979FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:#2176FF;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </button>
         <div class="faq-answer px-6"><p class="text-slate-500 text-sm leading-relaxed pb-5">We can usually begin a pilot within a few business days of receiving your brief and sample data. Full project onboarding — including guideline finalization and team calibration — typically takes one to two weeks depending on project complexity.</p></div>
       </div>
@@ -860,7 +905,7 @@
 
 
 <!-- ████████████████████████████████████████
-     CONTACT FORM
+     CONTACT
 █████████████████████████████████████████ -->
 <section id="contact" class="py-24 lg:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -891,7 +936,8 @@
             </div>
             <div>
               <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-0.5">WhatsApp</p>
-              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" class="text-brand-navy font-bold hover:text-emerald-600 transition">Chat with us directly</a>
+              <!-- ✅ UPDATED WHATSAPP NUMBER: +60109388503 -->
+              <a href="https://wa.me/60109388503" target="_blank" rel="noopener noreferrer" class="text-brand-navy font-bold hover:text-emerald-600 transition">+601 0938 8503</a>
             </div>
           </div>
           <div class="flex gap-4 items-center">
@@ -961,7 +1007,7 @@
 <!-- ████████████████████████████████████████
      FINAL CTA
 █████████████████████████████████████████ -->
-<section class="py-20" style="background:linear-gradient(135deg,#020818,#061535,#0d2d80);">
+<section class="py-20" style="background:linear-gradient(135deg,#020C1E,#051230,#092060);">
   <div class="max-w-3xl mx-auto px-4 text-center reveal">
     <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
       Ready to Build Better AI<br/>
@@ -982,29 +1028,29 @@
 
 
 <!-- ████████████████████████████████████████
-     FOOTER — Blue logo, auto year
+     FOOTER
 █████████████████████████████████████████ -->
-<footer style="background:#020818;">
+<footer style="background:#020C1E;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="grid md:grid-cols-3 gap-10 pb-10" style="border-bottom:1px solid rgba(255,255,255,0.06);">
 
       <div class="md:col-span-1">
         <div class="flex items-center gap-3 mb-4">
-          <!-- Footer logo: same SVG, brightened for dark bg -->
-          <svg width="34" height="34" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Footer logo: lighter blue for dark background -->
+          <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="logoGradFtr" x1="30" y1="20" x2="170" y2="180" gradientUnits="userSpaceOnUse">
-                <stop offset="0%"   stop-color="#90CAF9"/>
-                <stop offset="50%"  stop-color="#42A5F5"/>
-                <stop offset="100%" stop-color="#1E88E5"/>
+              <linearGradient id="lgFtr" x1="20" y1="15" x2="100" y2="105" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="#93C5FD"/>
+                <stop offset="50%"  stop-color="#5599FF"/>
+                <stop offset="100%" stop-color="#2176FF"/>
               </linearGradient>
             </defs>
-            <path d="M72 18C72 18,62 8,48 14C34 20,30 36,38 50L78 100L30 148C18 162,24 180,40 186C56 192,68 182,76 168L100 130L124 168C132 182,146 192,162 186C178 180,182 162,170 148L122 100L158 54C168 40,166 22,152 16C138 10,124 18,116 32L100 62L84 34C80 26,76 20,72 18Z" fill="url(#logoGradFtr)"/>
-            <circle cx="148" cy="36" r="14" fill="#020818"/>
-            <circle cx="148" cy="36" r="9"  fill="url(#logoGradFtr)"/>
+            <path d="M42 8C36 2,24 2,19 10C14 18,17 29,25 36L44 54L14 72C5 79,4 92,12 98C20 104,33 101,39 93L57 74L75 94C81 102,94 105,101 99C108 93,107 80,99 73L76 55L95 37C103 30,106 18,100 11C94 4,82 3,75 10L58 28L42 8Z" fill="url(#lgFtr)"/>
+            <circle cx="85" cy="26" r="9" fill="#020C1E"/>
+            <circle cx="85" cy="26" r="5.5" fill="url(#lgFtr)"/>
           </svg>
           <div>
-            <div class="text-lg font-black text-white tracking-tight">Xtecq<span style="color:#42A5F5;">.</span></div>
+            <div class="text-lg font-black text-white tracking-tight">Xtecq<span style="color:#5599FF;">.</span></div>
             <div class="text-[9px] text-white/25 font-semibold uppercase tracking-widest">AI Data Solutions</div>
           </div>
         </div>
@@ -1033,6 +1079,13 @@
               ops@xtecq.com
             </a>
           </li>
+          <!-- ✅ UPDATED WHATSAPP in footer -->
+          <li>
+            <a href="https://wa.me/60109388503" target="_blank" rel="noopener noreferrer" class="text-white/30 text-sm hover:text-white transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              +601 0938 8503
+            </a>
+          </li>
           <li class="flex items-center gap-2 text-white/30 text-sm">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             Kuala Lumpur, Malaysia
@@ -1052,7 +1105,7 @@
 
 
 <!-- ████████████████████████████████████████
-     WHATSAPP WIDGET
+     WHATSAPP WIDGET — ✅ Updated to +60109388503
 █████████████████████████████████████████ -->
 <div id="wa-widget">
   <div id="wa-panel">
@@ -1063,7 +1116,7 @@
         </div>
         <div>
           <p class="text-white font-bold text-sm">Xtecq</p>
-          <p class="text-white/60 text-xs">ops@xtecq.com</p>
+          <p class="text-white/60 text-xs">+601 0938 8503</p>
         </div>
       </div>
     </div>
@@ -1071,7 +1124,8 @@
       <div class="rounded-xl p-3 text-sm text-slate-700 mb-4" style="background:#F0F0F0;max-width:88%;">
         👋 Hi! Tell us what you're working on and we'll see if we can help.
       </div>
-      <a href="https://wa.me/60123456789?text=Hi%20Xtecq!%20I'd%20like%20to%20discuss%20an%20AI%20data%20project."
+      <!-- ✅ Updated WA number in chat link -->
+      <a href="https://wa.me/60109388503?text=Hi%20Xtecq!%20I'd%20like%20to%20discuss%20an%20AI%20data%20project."
          target="_blank" rel="noopener noreferrer"
          class="block w-full text-center py-3 rounded-xl text-white font-bold text-sm"
          style="background:#25D366;">
@@ -1098,13 +1152,12 @@
 /* Auto year */
 document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
-/* Particle canvas — blue particles matching brand */
+/* Particle canvas */
 (function(){
   var canvas = document.getElementById('particle-canvas');
   if(!canvas) return;
   var ctx = canvas.getContext('2d');
   var particles = [], W = 0, H = 0;
-
   function setSize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
   if(window.ResizeObserver){
     new ResizeObserver(function(){ setSize(); init(); }).observe(canvas.parentElement);
@@ -1112,18 +1165,15 @@ document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent =
     window.addEventListener('resize', function(){ setSize(); init(); });
   }
   setSize();
-
   function rand(a,b){ return Math.random()*(b-a)+a; }
-
   function init(){
     particles = [];
     var n = Math.max(15, Math.floor(W*H/18000));
     for(var i=0;i<n;i++){
-      particles.push({ x:rand(0,W), y:rand(0,H), r:rand(0.4,1.8), vx:rand(-0.12,0.12), vy:rand(-0.12,0.12), o:rand(0.08,0.35) });
+      particles.push({ x:rand(0,W), y:rand(0,H), r:rand(0.4,1.8), vx:rand(-0.12,0.12), vy:rand(-0.12,0.12), o:rand(0.08,0.32) });
     }
   }
   init();
-
   function draw(){
     ctx.clearRect(0,0,W,H);
     for(var i=0;i<particles.length;i++){
@@ -1132,7 +1182,7 @@ document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent =
       if(p.x<0)p.x=W; if(p.x>W)p.x=0;
       if(p.y<0)p.y=H; if(p.y>H)p.y=0;
       ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(100,180,255,'+p.o+')';
+      ctx.fillStyle='rgba(85,153,255,'+p.o+')';
       ctx.fill();
     }
     for(var i=0;i<particles.length;i++){
@@ -1143,7 +1193,7 @@ document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent =
           ctx.beginPath();
           ctx.moveTo(particles[i].x,particles[i].y);
           ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.strokeStyle='rgba(65,145,255,'+(0.06*(1-d/100))+')';
+          ctx.strokeStyle='rgba(33,118,255,'+(0.05*(1-d/100))+')';
           ctx.lineWidth=0.5; ctx.stroke();
         }
       }
@@ -1154,83 +1204,89 @@ document.querySelectorAll('.footer-year').forEach(function(el){ el.textContent =
 })();
 
 /* Sticky nav */
-var navbar=document.getElementById('navbar');
-window.addEventListener('scroll',function(){ navbar.classList.toggle('nav-scrolled',window.scrollY>20); });
+var navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function(){ navbar.classList.toggle('nav-scrolled', window.scrollY > 20); });
 
 /* Hamburger */
-var ham=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu'),io=document.getElementById('icon-open'),ic=document.getElementById('icon-close'),mopen=false;
-ham.addEventListener('click',function(){ mopen=!mopen; mm.classList.toggle('open',mopen); io.classList.toggle('hidden',mopen); ic.classList.toggle('hidden',!mopen); });
-mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ mopen=false; mm.classList.remove('open'); io.classList.remove('hidden'); ic.classList.add('hidden'); }); });
+var ham=document.getElementById('hamburger'), mm=document.getElementById('mobile-menu'),
+    io=document.getElementById('icon-open'), ic=document.getElementById('icon-close'), mopen=false;
+ham.addEventListener('click', function(){
+  mopen=!mopen; mm.classList.toggle('open',mopen);
+  io.classList.toggle('hidden',mopen); ic.classList.toggle('hidden',!mopen);
+});
+mm.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ mopen=false; mm.classList.remove('open'); io.classList.remove('hidden'); ic.classList.add('hidden'); });
+});
 
 /* Scroll reveal */
 (function(){
   var els=document.querySelectorAll('.reveal');
   var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible');} });
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } });
   },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-  els.forEach(function(el){obs.observe(el);});
+  els.forEach(function(el){ obs.observe(el); });
 })();
 
 /* Progress bars */
 (function(){
   var bars=document.querySelectorAll('.progress-bar');
   var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){e.target.style.width=e.target.getAttribute('data-width')+'%';} });
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.style.width=e.target.getAttribute('data-width')+'%'; } });
   },{threshold:0.5});
-  bars.forEach(function(b){obs.observe(b);});
+  bars.forEach(function(b){ obs.observe(b); });
 })();
 
 /* FAQ accordion */
 document.querySelectorAll('.faq-trigger').forEach(function(t){
-  t.addEventListener('click',function(){
+  t.addEventListener('click', function(){
     var ans=t.closest('.faq-item').querySelector('.faq-answer');
     var ico=t.querySelector('.faq-icon');
     var was=ans.classList.contains('open');
-    document.querySelectorAll('.faq-answer').forEach(function(a){a.classList.remove('open');});
-    document.querySelectorAll('.faq-icon').forEach(function(i){i.classList.remove('open');});
-    if(!was){ans.classList.add('open');ico.classList.add('open');}
+    document.querySelectorAll('.faq-answer').forEach(function(a){ a.classList.remove('open'); });
+    document.querySelectorAll('.faq-icon').forEach(function(i){ i.classList.remove('open'); });
+    if(!was){ ans.classList.add('open'); ico.classList.add('open'); }
   });
 });
 
 /* WhatsApp widget */
-var waPanel=document.getElementById('wa-panel'),waBubble=document.getElementById('wa-bubble');
-function toggleWA(){waPanel.classList.toggle('open');}
-waBubble.addEventListener('click',toggleWA);
-waBubble.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleWA();}});
-document.addEventListener('click',function(e){if(!document.getElementById('wa-widget').contains(e.target))waPanel.classList.remove('open');});
+var waPanel=document.getElementById('wa-panel'), waBubble=document.getElementById('wa-bubble');
+function toggleWA(){ waPanel.classList.toggle('open'); }
+waBubble.addEventListener('click', toggleWA);
+waBubble.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleWA(); } });
+document.addEventListener('click', function(e){ if(!document.getElementById('wa-widget').contains(e.target)) waPanel.classList.remove('open'); });
 
-/* Scroll to top */
+/* Scroll top */
 var stb=document.getElementById('scroll-top');
-window.addEventListener('scroll',function(){stb.classList.toggle('visible',window.scrollY>400);});
-stb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+window.addEventListener('scroll', function(){ stb.classList.toggle('visible', window.scrollY>400); });
+stb.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 
 /* Smooth anchor scroll */
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var h=this.getAttribute('href'); if(h==='#')return;
+  a.addEventListener('click', function(e){
+    var h=this.getAttribute('href'); if(h==='#') return;
     var t=document.querySelector(h);
-    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'});}
+    if(t){ e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'}); }
   });
 });
 
 /* Contact form */
-var form=document.getElementById('contact-form'),sb=document.getElementById('submit-btn'),sm=document.getElementById('form-success');
+var form=document.getElementById('contact-form'), sb=document.getElementById('submit-btn'), sm=document.getElementById('form-success');
 if(form){
-  form.addEventListener('submit',async function(e){
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
-    if(form.querySelector('[name="_gotcha"]').value)return;
+    if(form.querySelector('[name="_gotcha"]').value) return;
     sb.disabled=true;
     sb.innerHTML='<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Sending...';
     var action=form.getAttribute('action')||'';
     if(action.includes('YOUR_FORM_ID')||action===''){
-      setTimeout(function(){form.reset();sb.style.display='none';sm.classList.remove('hidden');},900);
+      setTimeout(function(){ form.reset(); sb.style.display='none'; sm.classList.remove('hidden'); }, 900);
       return;
     }
     try{
       var r=await fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){form.reset();sb.style.display='none';sm.classList.remove('hidden');}
+      if(r.ok){ form.reset(); sb.style.display='none'; sm.classList.remove('hidden'); }
       else throw new Error();
-    }catch(err){sb.disabled=false;sb.textContent='⚠️ Error — try again';}
+    }catch(err){ sb.disabled=false; sb.textContent='⚠️ Error — try again'; }
   });
 }
 </script>
